@@ -1,11 +1,27 @@
-import React from 'react'
-import { Button, Col, Container, Row } from 'react-bootstrap'
+import React, { useMemo } from 'react'
+import { Button, Col, Container, Row, Table } from 'react-bootstrap'
 import { FaPlus } from 'react-icons/fa6'
 import { useNavigate } from 'react-router-dom'
+import { PromotionColumns } from './Table/PromotionColumns'
+import  PROMOTION_DATA  from './Table/PROMOTION_DATA.json'
+import {useTable,useSortBy,usePagination} from 'react-table'
+import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
+
 
 const Promotion = () => {
   const navigate =useNavigate()
   const handleShow = () =>navigate("/promotionAddForm");
+
+ 
+    const columns = useMemo(()=>PromotionColumns,[]);
+    const data = useMemo(()=>PROMOTION_DATA,[]);
+     const {getTableProps,getTableBodyProps,headerGroups,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
+      columns,
+      data
+    },
+    useSortBy,usePagination)
+    
+    const {pageIndex}= state;
   return (
   <>
     <Container fluid className="">
@@ -42,7 +58,56 @@ const Promotion = () => {
         </Button>
       </Col>
     </Row>
-    
+    <Row>
+    <Table {...getTableProps()} responsive={true}>
+          <thead>
+            {
+              headerGroups.map((headerGroups)=>(
+                <tr {...headerGroups.getHeaderGroupProps()}>
+                  {
+                    headerGroups.headers.map((column)=>(
+                      <th  {...column.getHeaderProps(column.getSortByToggleProps())}>
+                                  {column.render('Header')}
+ 
+                               {column.isSorted ? (column.isSortedDesc ? <AiOutlineArrowDown className='m-1'/> : <AiOutlineArrowUp className='m-1'/>) : ''}
+</th>
+                    ))
+                  }
+              </tr>
+              ))
+            }
+           
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            
+              {
+                page.map(row => {
+                  prepareRow(row)
+                  return(
+                    <tr {...row.getRowProps()}>
+                      {
+                        row.cells.map((cell)=>{
+                          return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                        })
+                      }
+                    </tr>
+                  )
+                })
+              }
+             
+          </tbody>
+        </Table>
+        <Col>
+        <span className='m-1'>
+          page 
+          <strong className='m-2'>
+            {pageIndex+1} of {pageOptions.length}
+          </strong>{' '}
+        </span>
+        <Button onClick={()=>previousPage()} disabled={!canPreviousPage} className='m-2'>previous</Button>
+        <Button onClick={()=>nextPage()} disabled={!canNextPage}>Next</Button>
+        </Col>
+    </Row>
   </Container>
  
   </>

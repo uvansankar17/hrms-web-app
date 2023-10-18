@@ -25,6 +25,10 @@ export const PromotionColumns = [
         Header:"PROMOTION DATE",
         accessor:"promotion_date"
     },
+    {
+        Header:"ACTION",
+        accessor:"action"
+    }
     
     
 ]
