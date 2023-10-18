@@ -4,9 +4,6 @@ import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
 
 const UserReport = () => {
   
-
- 
- 
   return (
     <>
     <Container fluid className='d-flex flex-column'>
