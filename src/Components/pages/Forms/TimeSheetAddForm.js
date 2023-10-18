@@ -49,42 +49,42 @@ const TimeSheetAddForm = () => {
           <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
           <Form.Group className='' >
           <Form.Label>Project*</Form.Label>
-              <Form.Control className={`form-control ${touched.projectName && errors.projectName ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
+              <Form.Control name='projectName' className={`form-control ${touched.projectName && errors.projectName ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
               {touched.projectName && errors.projectName ?<p className='text-danger'>{errors.projectName}</p> : ""}
             </Form.Group>
           </Col>
           <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
           <Form.Group>
               <Form.Label>Deadline*</Form.Label>
-              <Form.Control type='date' className={`form-control ${touched.deadLine && errors.deadLine ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
+              <Form.Control name='deadLine' type='date' className={`form-control ${touched.deadLine && errors.deadLine ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
               {touched.deadLine && errors.deadLine ?<p className='text-danger'>{errors.deadLine}</p> : ""}
             </Form.Group>
           </Col>
           <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
           <Form.Group>
               <Form.Label>Total Hours*</Form.Label>
-              <Form.Control type='time' className={`form-control ${touched.totalHours && errors.totalHours ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
+              <Form.Control name='totalHours' type='time' className={`form-control ${touched.totalHours && errors.totalHours ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
               {touched.totalHours && errors.totalHours ?<p className='text-danger'>{errors.totalHours}</p> : ""}
             </Form.Group>
           </Col>
           <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
           <Form.Group>
               <Form.Label >Remaining Hours*</Form.Label>
-              <Form.Control type='time' className={`form-control ${touched.remainingHours && errors.remainingHours ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
+              <Form.Control name='remainingHours' type='time' className={`form-control ${touched.remainingHours && errors.remainingHours ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
               {touched.remainingHours && errors.remainingHours ?<p className='text-danger'>{errors.remainingHours}</p> : ""}
             </Form.Group>
           </Col>
           <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
           <Form.Group>
               <Form.Label>Date*</Form.Label>
-              <Form.Control type='date'className={`form-control ${touched.date && errors.date ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
+              <Form.Control name='date' type='date'className={`form-control ${touched.date && errors.date ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
               {touched.date && errors.date ?<p className='text-danger'>{errors.date}</p> : ""}
             </Form.Group>
           </Col>
           <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
           <Form.Group>
               <Form.Label>Hours*</Form.Label>
-              <Form.Control type='time' className={`form-control ${touched.hours && errors.hours ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
+              <Form.Control name='hours' type='time' className={`form-control ${touched.hours && errors.hours ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
               {touched.hours && errors.hours ?<p className='text-danger'>{errors.hours}</p> : ""}
             </Form.Group>
           </Col>
@@ -94,9 +94,10 @@ const TimeSheetAddForm = () => {
             <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group className='mt-2'>
             <Form.Label>Description</Form.Label>
-            <FloatingLabel controlId="floatingTextarea2" label="type here.....">
+            <FloatingLabel  controlId="floatingTextarea2" label="type here.....">
         <Form.Control
           as="textarea"
+          name='description'
           placeholder="Leave a comment here"
           style={{ height: '100px' }}
           className={`form-control ${touched.description && errors.description ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}
