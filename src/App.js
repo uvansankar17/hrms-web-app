@@ -19,7 +19,6 @@ import Report from "./Components/pages/Report";
 import Projects from "./Components/pages/Projects";
 import Clients from "./Components/pages/Clients";
 import Promotion from "./Components/pages/Promotion";
-import Settings from "./Components/pages/Settings";
 import UserReport from "./Components/pages/UserReport";
 import AttendanceReport from "./Components/pages/AttendanceReport";
 import LeaveReport from "./Components/pages/LeaveReport";
@@ -27,6 +26,12 @@ import Training from "./Components/pages/Training";
 import ProjectAddForm from "./Components/pages/Forms/ProjectAddForm";
 import ProjectEditForm from "./Components/pages/Forms/ProjectEditForm";
 import TimeSheetAddForm from "./Components/pages/Forms/TimeSheetAddForm";
+import Status from "./Components/pages/Status";
+import Tickets from "./Components/pages/Tickets";
+import TrainingAddForm from "./Components/pages/Forms/TrainingAddForm";
+import TrainingEditForm from "./Components/pages/Forms/TrainingEditForm";
+import PromotionAddForm from "./Components/pages/Forms/PromotionAddForm";
+import PromotionEditForm from "./Components/pages/Forms/PromotionEditForm";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -94,8 +99,8 @@ function App() {
                   element={authenticated ? <Clients /> : <Navigate to="/login" />}
                 />
                 <Route
-                  path="/setting"
-                  element={authenticated ? <Settings/> : <Navigate to="/login" />}
+                  path="/status"
+                  element={authenticated ? <Status/> : <Navigate to="/login" />}
                 />
                 <Route
                   path="/promotion"
@@ -128,6 +133,26 @@ function App() {
                 <Route
                   path="/timeSheetAddForm"
                   element={authenticated ? <TimeSheetAddForm/> : <Navigate to="/login" />}
+                />
+                 <Route
+                  path="/ticket"
+                  element={authenticated ? <Tickets/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/trainingAddForm"
+                  element={authenticated ? <TrainingAddForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/trainingEditForm"
+                  element={authenticated ? <TrainingEditForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/promotionAddForm"
+                  element={authenticated ? <PromotionAddForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/promotionEditForm"
+                  element={authenticated ? <PromotionEditForm/> : <Navigate to="/login" />}
                 />
               </Routes>
             </Col>
