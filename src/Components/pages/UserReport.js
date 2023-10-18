@@ -1,23 +1,11 @@
 import React, { useMemo, useState } from 'react'
 import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
-import {
-  useReactTable,
-  flexRender,
-  getCoreRowModel,
-  getSortedRowModel,
-} from "@tanstack/react-table";
- import {columnDef,columnDefWithGrouping} from '../pages/Columns'
-import dataJSON from '../pages/json/data.json'
+
 
 const UserReport = () => {
-  const finalData = useMemo(() => dataJSON, []);
-  const finalColumnDef =useMemo(() => columnDef, []);
+  
 
-  const tableInstance = useReactTable({
-    columns: finalColumnDef,
-    data: finalData,
-    
-  });
+ 
  
   return (
     <>
@@ -53,46 +41,7 @@ const UserReport = () => {
         </Form>
       </Row>
       <Row>
-        {/* <Table>
-        <thead>
-          {tableInstance.getHeaderGroups().map((headerEl) => {
-            return (
-              <tr key={headerEl.id}>
-                {headerEl.headers.map((columnEl) => {
-                  return (
-                    <th key={columnEl.id} colSpan={columnEl.colSpan}>
-                      {columnEl.isPlaceholder
-                        ? null
-                        : flexRender(
-                            columnEl.column.columnDef.header,
-                            columnEl.getContext()
-                          )}
-                    </th>
-                  );
-                })}
-              </tr>
-            );
-          })}
-        </thead>
-        <tbody>
-          {tableInstance.getRowModel().rows.map((rowEl) => {
-            return (
-              <tr key={rowEl.id}>
-                {rowEl.getVisibleCells().map((cellEl) => {
-                  return (
-                    <td key={cellEl.id}>
-                      {flexRender(
-                        cellEl.column.columnDef.cell,
-                        cellEl.getContext()
-                      )}
-                    </td>
-                  );
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
-        </Table> */}
+        
       </Row>
     </Container>
     </>
