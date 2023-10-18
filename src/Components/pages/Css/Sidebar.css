@@ -1,0 +1,26 @@
+.accordion-button {
+    background-color: #313947 !important;
+    color:white;
+    padding: 6px;
+  }
+  
+  .accordion-button:focus {
+    box-shadow: none;
+    border:none;
+    outline: 0!important
+    
+  }
+  
+  .accordion-button:not(.collapsed) {
+    color:white;
+  }
+  .accordion-button-icon{
+    color:white;
+  }
+  .Active{
+    background-color:#00d4ff ;
+    color:white ;
+  }
+  .sidebar::-webkit-scrollbar{
+    display: none;
+}
