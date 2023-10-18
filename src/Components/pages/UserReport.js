@@ -3,11 +3,12 @@ import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
 import {useTable,useSortBy,usePagination} from 'react-table'
 import MOCK_DATA from '../pages/Table/MOCK_DATA.json'
 import {COLUMNS} from '../pages/Table/Columns'
+import {AiOutlineArrowDown, AiOutlineArrowUp} from 'react-icons/ai'
 
 const UserReport = () => {
   const columns = useMemo(()=>COLUMNS,[]);
   const data = useMemo(()=>MOCK_DATA,[]);
-   const {getTableProps,getTableBodyProps,headerGroups,rows,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
+   const {getTableProps,getTableBodyProps,headerGroups,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
     columns,
     data
   },
@@ -58,7 +59,7 @@ const UserReport = () => {
                       <th  {...column.getHeaderProps(column.getSortByToggleProps())}>
                                   {column.render('Header')}
  
-                               {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
+                               {column.isSorted ? (column.isSortedDesc ? <AiOutlineArrowDown className='m-1'/> : <AiOutlineArrowUp className='m-1'/>) : ''}
 </th>
                     ))
                   }
@@ -87,7 +88,7 @@ const UserReport = () => {
           </tbody>
         </Table>
         <Col>
-        <span>
+        <span className='m-1'>
           page 
           <strong className='m-2'>
             {pageIndex+1} of {pageOptions.length}

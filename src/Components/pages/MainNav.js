@@ -15,7 +15,8 @@ import {
   AiOutlineMenu, AiOutlineProject,
   
 } from "react-icons/ai";
-import { BsThreeDotsVertical} from "react-icons/bs";
+import { BsThreeDotsVertical, BsTicketPerforated} from "react-icons/bs";
+import { PiStudentDuotone} from "react-icons/pi";
 
 
 
@@ -161,6 +162,12 @@ const MainNav = () => {
 
        </Link>
         </Row>
+        <Row className='p-2 d-flex align-items-center'onClick={()=>setShow(false)}>
+       <Link to={"/training"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+       <h6 className='d-flex align-items-center' style={{fontSize:"15px",}} ><PiStudentDuotone size={20} style={{marginRight:"10px",}}/>Training</h6>
+
+       </Link>
+        </Row>
         <Accordion className='mt-3 mb-3' >
       <Accordion.Item eventKey="0"  style={{backgroundColor:"#313947",outline:"none",border:"none"}}>
         <Accordion.Header className='' style={{ backgroundColor: '#313947',color:"white", }} ><BiSolidPieChartAlt2 size={20} style={{marginRight:"10px",}}/>Report  </Accordion.Header>
@@ -191,23 +198,40 @@ const MainNav = () => {
         </Link>
         </Row>
         <Row className='p-2 d-flex align-items-center' onClick={()=>setShow(false)}>
+        <Link to={"/ticket"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center'  style={{fontSize:"15px",}}><BsTicketPerforated size={20} style={{marginRight:"10px",}}/>Tickets</h6>
+
+        </Link>
+        </Row>
+        <Row className='p-2 d-flex align-items-center' onClick={()=>setShow(false)}>
         <Link to={"/client"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
         <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><GiShakingHands size={20} style={{marginRight:"10px",}}/>Clients</h6>
 
         </Link>
         </Row>
-        <Row className='p-2 d-flex align-items-center' onClick={()=>setShow(false)}>
-        <Link to={"/setting"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><IoSettingsOutline size={20} style={{marginRight:"10px",}}/>Settings</h6>
+        
+        <Accordion className='mt-3 mb-3'>
+      <Accordion.Item eventKey="0"  style={{backgroundColor:"#313947",outline:"none",border:"none"}}>
+        <Accordion.Header className='' style={{ backgroundColor: '#313947',color:"white", }} ><IoSettingsOutline size={20} style={{marginRight:"10px",}}/>Settings</Accordion.Header>
+        <Accordion.Body>
+        <Row onClick={()=>setShow(false)}>
+        <Link to={"/status"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}>Status</h6>
 
         </Link>
         </Row>
+        
+  
+        </Accordion.Body>
+        </Accordion.Item>
+        </Accordion>
         <Row className='p-2 d-flex align-items-center'onClick={()=>setShow(false)}>
         <Link to={"/promotion"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
         <h6 className='d-flex align-items-center'  style={{fontSize:"15px",}}><TbSpeakerphone size={20} style={{marginRight:"10px",}}/>Promotion</h6>
 
         </Link>
         </Row>
+        
         
           </Offcanvas.Body>
         </Offcanvas>

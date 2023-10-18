@@ -12,6 +12,7 @@ import { GiShakingHands } from 'react-icons/gi';
 import { IoSettingsOutline} from 'react-icons/io5';
 import { TbSpeakerphone } from 'react-icons/tb';
 import { PiStudentDuotone } from 'react-icons/pi';
+import { BsTicketPerforated } from 'react-icons/bs';
 
 const Sidebar = () => {
 
@@ -97,6 +98,12 @@ const Sidebar = () => {
         </Link>
         </Row>
         <Row className='p-2 d-flex align-items-center'>
+        <Link to={"/ticket"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center'  style={{fontSize:"15px",}}><BsTicketPerforated size={20} style={{marginRight:"10px",}}/>Tickets</h6>
+
+        </Link>
+        </Row>
+        <Row className='p-2 d-flex align-items-center'>
         <Link to={"/client"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
         <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><GiShakingHands size={20} style={{marginRight:"10px",}}/>Clients</h6>
 
@@ -107,7 +114,7 @@ const Sidebar = () => {
         <Accordion.Header className='' style={{ backgroundColor: '#313947',color:"white", }} ><IoSettingsOutline size={20} style={{marginRight:"10px",}}/>Settings</Accordion.Header>
         <Accordion.Body>
         <Row >
-        <Link to={"/setting"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <Link to={"/status"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
         <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}>Status</h6>
 
         </Link>
