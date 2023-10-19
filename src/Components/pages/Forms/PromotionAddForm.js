@@ -3,17 +3,21 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Button, Col,FloatingLabel, Form, Row } from 'react-bootstrap'
 import { PromotionShema } from './Validations/PromotionValidate';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const PromotionAddForm = () => {
+  const navigate = useNavigate();
     const initialValues = {
         promotionFor: "",
         promotionFrom: "",
         promotionTo: "",
         promotionDate: "", // You can set it to a default date if needed
       };
-      
+      const handleCancel = () =>{
+        navigate(-1)
+      }
       function handleSubmit(){
         // Handle form submission here
         console.log('hi hrms');
@@ -41,7 +45,7 @@ const PromotionAddForm = () => {
                 <h4>Add Promotion</h4>
                 </Col>
                 <Col className='d-sm-none d-none d-md-none d-lg-flex d-xxl-flex d-xl-flex flex-row justify-content-end align-items-center'>
-                <Button className='m-1' variant='secondary'>Cancel</Button>
+                <Button className='m-1' variant='secondary' onClick={handleCancel}>Cancel</Button>
                 <Button className='m-1' type='submit' disabled={isSubmitting} onClick={handleSubmit}>Save</Button>
                 </Col>
             </Row>
@@ -87,7 +91,7 @@ const PromotionAddForm = () => {
                 </Row>
                 <Row className='d-sm-flex d-flex d-md-flex d-lg-none d-xxl-none d-xl-none flex-row justify-content-between align-items-center'>
             <Col className='d-flex justify-content-start align-items-center'>
-                <Button className='m-1' variant='secondary'>Cancel</Button>
+                <Button className='m-1' variant='secondary'onClick={handleCancel}>Cancel</Button>
                 
                 </Col>
                 <Col className='d-flex justify-content-end align-items-center'>

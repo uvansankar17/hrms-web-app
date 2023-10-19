@@ -3,9 +3,14 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Button, Col,FloatingLabel, Form, Row } from 'react-bootstrap'
 import { projectShema } from './Validations/TimeFormValidate';
+import { useNavigate } from 'react-router-dom';
 
 
 const TimeSheetEditForm = () => {
+  const navigate = useNavigate();
+  const handleCancel = () =>{
+    navigate(-1)
+  }
   const initialValues = {
     projectName: "",
     deadLine:"",
@@ -41,7 +46,7 @@ const TimeSheetEditForm = () => {
             <h4>Edit Work Details</h4>
             </Col>
             <Col className='d-sm-none d-none d-md-none d-lg-flex d-xxl-flex d-xl-flex flex-row justify-content-end align-items-center'>
-            <Button className='m-1' variant='secondary'>Cancel</Button>
+            <Button className='m-1' variant='secondary' onClick={handleCancel}>Cancel</Button>
             <Button className='m-1' type='submit' disabled={isSubmitting} onClick={handleSubmit}>Update</Button>
             </Col>
         </Row>
@@ -110,7 +115,7 @@ const TimeSheetEditForm = () => {
             </Row>
             <Row className='d-sm-flex d-flex d-md-flex d-lg-none d-xxl-none d-xl-none flex-row justify-content-between align-items-center'>
         <Col className='d-flex justify-content-start align-items-center'>
-            <Button className='m-1' variant='secondary'>Cancel</Button>
+            <Button className='m-1' variant='secondary' onClick={handleCancel}>Cancel</Button>
             
             </Col>
             <Col className='d-flex justify-content-end align-items-center'>
