@@ -143,7 +143,7 @@ const Projects = () => {
     </Row>
   
     <Row>
-    <Table {...getTableProps()} responsive={true}>
+    <Table striped bordered hover {...getTableProps()} responsive={true}>
           <thead>
             {
               headerGroups.map((headerGroups)=>(

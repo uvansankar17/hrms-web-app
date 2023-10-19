@@ -22,7 +22,7 @@ const Promotion = () => {
   const handleShow = () =>navigate("/promotionAddForm");
   const PromotionColumns = [
     {
-        Header:"ID",
+        Header:"#",
         accessor:"id"
     },
     {
@@ -105,7 +105,7 @@ const Promotion = () => {
       </Col>
     </Row>
     <Row>
-    <Table {...getTableProps()} responsive={true}>
+    <Table striped bordered hover {...getTableProps()} responsive={true}>
           <thead>
             {
               headerGroups.map((headerGroups)=>(
