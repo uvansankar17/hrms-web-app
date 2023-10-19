@@ -26,6 +26,7 @@ import Training from "./Components/pages/Training";
 import ProjectAddForm from "./Components/pages/Forms/ProjectAddForm";
 import ProjectEditForm from "./Components/pages/Forms/ProjectEditForm";
 import TimeSheetAddForm from "./Components/pages/Forms/TimeSheetAddForm";
+import TimeSheetEditForm from "./Components/pages/Forms/TimeSheetEditForm";
 import Status from "./Components/pages/Status";
 import Tickets from "./Components/pages/Tickets";
 import TrainingAddForm from "./Components/pages/Forms/TrainingAddForm";
@@ -133,6 +134,10 @@ function App() {
                 <Route
                   path="/timeSheetAddForm"
                   element={authenticated ? <TimeSheetAddForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/timeSheetEditForm"
+                  element={authenticated ? <TimeSheetEditForm/> : <Navigate to="/login" />}
                 />
                  <Route
                   path="/ticket"
