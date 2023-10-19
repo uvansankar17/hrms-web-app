@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import TIMESHEET_DATA from './Table/TIMESHEET_DATA.json'
 import {useTable,useSortBy,usePagination} from 'react-table'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
+import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
 
 
 const TimeSheet = () => {
@@ -143,16 +144,23 @@ const TimeSheet = () => {
              
           </tbody>
         </Table>
-        <Col>
-        <span className='m-1'>
+        <Col className='d-flex flex-row justify-content-center align-items-center'>
+        <span className='m-1 d-flex justify-content-start align-items-center'>
           page 
           <strong className='m-2'>
             {pageIndex+1} of {pageOptions.length}
           </strong>{' '}
         </span>
+        <Col className='d-none d-sm-none d-md-none d-xxl-flex d-xl-flex d-lg-flex justify-content-end align-items-center'>
         <Button onClick={()=>previousPage()} disabled={!canPreviousPage} className='m-2'>previous</Button>
         <Button onClick={()=>nextPage()} disabled={!canNextPage}>Next</Button>
         </Col>
+        <Col className='d-flex d-sm-flex d-md-flex d-xxl-none d-xl-none d-lg-none justify-content-end align-items-center'>
+        <Button onClick={()=>previousPage()} disabled={!canPreviousPage} className='m-2'><BiLeftArrow size={16}/></Button>
+        <Button onClick={()=>nextPage()} disabled={!canNextPage}><BiRightArrow size={16}/></Button>
+        </Col>
+        </Col>
+        
     </Row>
   </Container>
   <Modal show={deleteShow} onHide={deleteHandleClose} centered>
