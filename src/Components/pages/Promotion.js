@@ -1,17 +1,63 @@
-import React, { useMemo } from 'react'
-import { Button, Col, Container, Row, Table } from 'react-bootstrap'
+import React, { useMemo, useState } from 'react'
+import { Button, Col, Container, Modal, Row, Table } from 'react-bootstrap'
 import { FaPlus } from 'react-icons/fa6'
-import { useNavigate } from 'react-router-dom'
-import { PromotionColumns } from './Table/PromotionColumns'
+import { Link, useNavigate } from 'react-router-dom'
+
 import  PROMOTION_DATA  from './Table/PROMOTION_DATA.json'
 import {useTable,useSortBy,usePagination} from 'react-table'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
+import { FaEdit } from 'react-icons/fa'
+import { MdDelete } from 'react-icons/md'
 
 
 const Promotion = () => {
   const navigate =useNavigate()
+  const [deleteShow, setDeleteShow] = useState(false);
+    const deleteHandleClose = () => {
+        setDeleteShow(false);
+      }
+      const deleteHandleShow = () => {
+        setDeleteShow(true);
+      }
   const handleShow = () =>navigate("/promotionAddForm");
-
+  const PromotionColumns = [
+    {
+        Header:"ID",
+        accessor:"id"
+    },
+    {
+        Header:"PROMOTED EMPLOYEE",
+        accessor:"promoted_employee"
+    },
+    {
+        Header:"DEPARTMENT",
+        accessor:"department"
+    },
+    {
+        Header:"PROMOTION FROM",
+        accessor:"promotion_from"
+    },
+    {
+        Header:"PROMOTION TO",
+        accessor:"promotion_to"
+    },
+    {
+        Header:"PROMOTION DATE",
+        accessor:"promotion_date"
+    },
+    {
+        Header:"ACTION",
+        accessor:"action",
+        Cell:()=>(
+            <div className='d-flex align-items-center justify-content-center flex-row'>
+            <Link to={"/promotionEditForm"} ><Button variant='warning' ><FaEdit/></Button></Link>
+            <Button variant='danger' className='m-1' onClick={()=>deleteHandleShow()} ><MdDelete/></Button>
+            </div>
+        )
+    }
+    
+    
+]
  
     const columns = useMemo(()=>PromotionColumns,[]);
     const data = useMemo(()=>PROMOTION_DATA,[]);
@@ -109,7 +155,22 @@ const Promotion = () => {
         </Col>
     </Row>
   </Container>
- 
+  <Modal show={deleteShow} onHide={deleteHandleClose} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Promotion</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            Confirm to Delete this Promotion..?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={deleteHandleClose}>
+            Yes
+          </Button>
+          <Button variant="secondary" onClick={deleteHandleClose}>
+            No
+          </Button>
+        </Modal.Footer>
+      </Modal>
   </>
   )
 }

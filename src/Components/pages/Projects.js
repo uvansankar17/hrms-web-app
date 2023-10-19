@@ -1,13 +1,81 @@
-import React, { useState } from 'react'
-import { Button, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap'
+import React, { useMemo, useState } from 'react'
+import { Button, Col, Container, FloatingLabel, Form, Modal, Row, Table } from 'react-bootstrap'
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { FaPlus } from "react-icons/fa";
+import { FaEdit, FaPlus } from "react-icons/fa";
 import { IoMdGrid } from "react-icons/io";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import PROJECT_DATA from './Table/PROJECT_DATA.json'
+import { MdDelete } from 'react-icons/md';
+import {useTable,useSortBy,usePagination} from 'react-table'
+import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 
 const Projects = () => {
  const navigate =useNavigate()
   const handleShow = () =>navigate("/projectAddForm");
+  const [deleteShow, setDeleteShow] = useState(false);
+    const deleteHandleClose = () => {
+        setDeleteShow(false);
+      }
+      const deleteHandleShow = () => {
+        setDeleteShow(true);
+      }
+ 
+  const ProjectColumns = [
+    {
+        Header:"#",
+        accessor:"id"
+    },
+    {
+        Header:"PROJECT",
+        accessor:"project"
+    },
+    {
+        Header:"PROJECT ID",
+        accessor:"project_id"
+    },
+    {
+        Header:"LEADER",
+        accessor:"leader"
+    },
+    {
+        Header:"TEAM",
+        accessor:"Team"
+    },
+    {
+        Header:"DEADLINE",
+        accessor:"deadline"
+    },
+    {
+      Header:"PRIORITY",
+      accessor:"priority"
+  },
+  {
+    Header:"STATUS",
+    accessor:"status"
+},
+    {
+        Header:"ACTION",
+        accessor:"action",
+        Cell:()=>(
+            <div className='d-flex align-items-center justify-content-center flex-row'>
+            <Link to={"/projectEditForm"} ><Button variant='warning' ><FaEdit/></Button></Link>
+            <Button variant='danger' className='m-1' onClick={()=>deleteHandleShow()} ><MdDelete/></Button>
+            </div>
+        )
+    }
+    
+    
+]
+ 
+    const columns = useMemo(()=>ProjectColumns,[]);
+    const data = useMemo(()=>PROJECT_DATA,[]);
+     const {getTableProps,getTableBodyProps,headerGroups,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
+      columns,
+      data
+    },
+    useSortBy,usePagination)
+    
+    const {pageIndex}= state;
   return (
   <>
     <Container fluid className="">
@@ -74,8 +142,73 @@ const Projects = () => {
       </Form>
     </Row>
   
-  </Container>
+    <Row>
+    <Table {...getTableProps()} responsive={true}>
+          <thead>
+            {
+              headerGroups.map((headerGroups)=>(
+                <tr {...headerGroups.getHeaderGroupProps()}>
+                  {
+                    headerGroups.headers.map((column)=>(
+                      <th  {...column.getHeaderProps(column.getSortByToggleProps())}>
+                                  {column.render('Header')}
  
+                               {column.isSorted ? (column.isSortedDesc ? <AiOutlineArrowDown className='m-1'/> : <AiOutlineArrowUp className='m-1'/>) : ''}
+</th>
+                    ))
+                  }
+              </tr>
+              ))
+            }
+           
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            
+              {
+                page.map(row => {
+                  prepareRow(row)
+                  return(
+                    <tr {...row.getRowProps()}>
+                      {
+                        row.cells.map((cell)=>{
+                          return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                        })
+                      }
+                    </tr>
+                  )
+                })
+              }
+             
+          </tbody>
+        </Table>
+        <Col>
+        <span className='m-1'>
+          page 
+          <strong className='m-2'>
+            {pageIndex+1} of {pageOptions.length}
+          </strong>{' '}
+        </span>
+        <Button onClick={()=>previousPage()} disabled={!canPreviousPage} className='m-2'>previous</Button>
+        <Button onClick={()=>nextPage()} disabled={!canNextPage}>Next</Button>
+        </Col>
+    </Row>
+  </Container>
+  <Modal show={deleteShow} onHide={deleteHandleClose} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Project</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            Confirm to Delete this Project..?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={deleteHandleClose}>
+            Yes
+          </Button>
+          <Button variant="secondary" onClick={deleteHandleClose}>
+            No
+          </Button>
+        </Modal.Footer>
+      </Modal>
   </>
   
   )

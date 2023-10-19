@@ -1,13 +1,44 @@
 import React, { useMemo, useState } from 'react'
 import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
 import {useTable,useSortBy,usePagination} from 'react-table'
-import MOCK_DATA from '../pages/Table/MOCK_DATA.json'
-import {COLUMNS} from '../pages/Table/Columns'
+import USERREPORT_DATA from '../pages/Table/USERREPORT_DATA.json'
 import {AiOutlineArrowDown, AiOutlineArrowUp} from 'react-icons/ai'
 
 const UserReport = () => {
-  const columns = useMemo(()=>COLUMNS,[]);
-  const data = useMemo(()=>MOCK_DATA,[]);
+const USERREPORTCOLUMNS = [
+    {
+        Header:"#",
+        accessor:"id"
+    },
+    {
+        Header:"NAME",
+        accessor:"Name"
+    },
+    {
+        Header:"COMPANY",
+        accessor:"company"
+    },
+    {
+        Header:"EMAIL",
+        accessor:"email"
+    },
+    {
+        Header:"ROLE",
+        accessor:"role"
+    },
+    {
+        Header:"DESIGNATION",
+        accessor:"designation"
+    },
+    {
+        Header:"STATUS",
+        accessor:"status"
+    },
+    
+   
+]
+  const columns = useMemo(()=>USERREPORTCOLUMNS,[]);
+  const data = useMemo(()=>USERREPORT_DATA,[]);
    const {getTableProps,getTableBodyProps,headerGroups,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
     columns,
     data
