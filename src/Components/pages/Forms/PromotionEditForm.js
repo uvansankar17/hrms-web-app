@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import { Button, Col,FloatingLabel, Form, Row } from 'react-bootstrap'
+import { Button, Col,Form, Row } from 'react-bootstrap'
 import { PromotionShema } from './Validations/PromotionValidate';
 import { useNavigate } from 'react-router-dom';
 

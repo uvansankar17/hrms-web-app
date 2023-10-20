@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo} from 'react'
 import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
 import {useTable,useSortBy,usePagination,useGlobalFilter} from 'react-table'
 import USERREPORT_DATA from '../pages/Table/USERREPORT_DATA.json'

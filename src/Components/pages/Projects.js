@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { Button, Col, Container, FloatingLabel, Form, Modal, Row, Table } from 'react-bootstrap'
+import { Button, Col, Container,Form, Modal, Row, Table } from 'react-bootstrap'
 
 import { FaEdit, FaPlus } from "react-icons/fa";
 
