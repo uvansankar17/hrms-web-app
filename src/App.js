@@ -33,6 +33,9 @@ import TrainingAddForm from "./Components/pages/Forms/TrainingAddForm";
 import TrainingEditForm from "./Components/pages/Forms/TrainingEditForm";
 import PromotionAddForm from "./Components/pages/Forms/PromotionAddForm";
 import PromotionEditForm from "./Components/pages/Forms/PromotionEditForm";
+import EmployeeAddForm from "./Components/pages/Forms/EmployeeAddForm";
+import EmployeeEditForm from "./Components/pages/Forms/EmployeeEditForm";
+import PaySlip from "./Components/pages/PaySlip";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -50,7 +53,7 @@ function App() {
               </Col>
             )}
 
-            <Col lg={9} xxl={10} xl={10} md={12} sm={12}>
+            <Col lg={authenticated ? 9 : 12} xxl={authenticated ? 10 : 12} xl={authenticated ? 10 : 12} md={12} sm={12}>
               <Routes>
                 {/* Public Routes */}
                 <Route path="/login" element={<Login setAuthenticated={setAuthenticated} />} />
@@ -94,6 +97,10 @@ function App() {
                 <Route
                   path="/project"
                   element={authenticated ? <Projects/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/payslip"
+                  element={authenticated ? <PaySlip/> : <Navigate to="/login" />}
                 />
                 <Route
                   path="/client"
@@ -158,6 +165,14 @@ function App() {
                 <Route
                   path="/promotionEditForm"
                   element={authenticated ? <PromotionEditForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/employeeAddForm"
+                  element={authenticated ? <EmployeeAddForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/employeeEditForm"
+                  element={authenticated ? <EmployeeEditForm/> : <Navigate to="/login" />}
                 />
               </Routes>
             </Col>
