@@ -6,39 +6,42 @@ import {AiOutlineArrowDown, AiOutlineArrowUp} from 'react-icons/ai'
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
 
 const UserReport = () => {
-const USERREPORTCOLUMNS = [
+
+const columns = useMemo(() => {
+  const USERREPORTCOLUMNS = [
     {
-        Header:"#",
-        accessor:"id"
-    },
-    {
-        Header:"NAME",
-        accessor:"Name"
-    },
-    {
-        Header:"COMPANY",
-        accessor:"company"
-    },
-    {
-        Header:"EMAIL",
-        accessor:"email"
-    },
-    {
-        Header:"ROLE",
-        accessor:"role"
-    },
-    {
-        Header:"DESIGNATION",
-        accessor:"designation"
-    },
-    {
-        Header:"STATUS",
-        accessor:"status"
-    },
-    
-   
-]
-  const columns = useMemo(()=>USERREPORTCOLUMNS,[]);
+      Header:"#",
+      accessor:"id"
+  },
+  {
+      Header:"NAME",
+      accessor:"Name"
+  },
+  {
+      Header:"COMPANY",
+      accessor:"company"
+  },
+  {
+      Header:"EMAIL",
+      accessor:"email"
+  },
+  {
+      Header:"ROLE",
+      accessor:"role"
+  },
+  {
+      Header:"DESIGNATION",
+      accessor:"designation"
+  },
+  {
+      Header:"STATUS",
+      accessor:"status"
+  },
+  
+  ];
+  return USERREPORTCOLUMNS;
+}, []);
+
   const data = useMemo(()=>USERREPORT_DATA,[]);
    const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
     columns,

@@ -21,54 +21,56 @@ const Projects = () => {
         setDeleteShow(true);
       }
  
+
+ 
+const columns = useMemo(() => {
   const ProjectColumns = [
     {
-        Header:"#",
-        accessor:"id"
-    },
-    {
-        Header:"PROJECT",
-        accessor:"project"
-    },
-    {
-        Header:"PROJECT ID",
-        accessor:"project_id"
-    },
-    {
-        Header:"LEADER",
-        accessor:"leader"
-    },
-    {
-        Header:"TEAM",
-        accessor:"team"
-    },
-    {
-        Header:"DEADLINE",
-        accessor:"deadline"
-    },
-    {
-      Header:"PRIORITY",
-      accessor:"priority"
+      Header:"#",
+      accessor:"id"
   },
   {
-    Header:"STATUS",
-    accessor:"status"
+      Header:"PROJECT",
+      accessor:"project"
+  },
+  {
+      Header:"PROJECT ID",
+      accessor:"project_id"
+  },
+  {
+      Header:"LEADER",
+      accessor:"leader"
+  },
+  {
+      Header:"TEAM",
+      accessor:"team"
+  },
+  {
+      Header:"DEADLINE",
+      accessor:"deadline"
+  },
+  {
+    Header:"PRIORITY",
+    accessor:"priority"
 },
-    {
-        Header:"ACTION",
-        accessor:"action",
-        Cell:()=>(
-            <div className='d-flex align-items-center justify-content-center flex-row'>
-            <Link to={"/projectEditForm"} ><Button variant='warning' ><FaEdit/></Button></Link>
-            <Button variant='danger' className='m-1' onClick={()=>deleteHandleShow()} ><MdDelete/></Button>
-            </div>
-        )
-    }
-    
-    
-]
- 
-    const columns = useMemo(()=>ProjectColumns,[]);
+{
+  Header:"STATUS",
+  accessor:"status"
+},
+  {
+      Header:"ACTION",
+      accessor:"action",
+      Cell:()=>(
+          <div className='d-flex align-items-center justify-content-center flex-row'>
+          <Link to={"/projectEditForm"} ><Button variant='warning' ><FaEdit/></Button></Link>
+          <Button variant='danger' className='m-1' onClick={()=>deleteHandleShow()} ><MdDelete/></Button>
+          </div>
+      )
+  }
+  
+  ];
+  return ProjectColumns;
+}, [])
     const data = useMemo(()=>PROJECT_DATA,[]);
      const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
       columns,
