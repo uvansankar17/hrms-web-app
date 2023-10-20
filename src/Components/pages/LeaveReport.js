@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
-import {useTable,useSortBy,usePagination} from 'react-table'
+import {useTable,useSortBy,usePagination,useGlobalFilter} from 'react-table'
 import LEAVEREPORT_DATA from '../pages/Table/LEAVEREPORT_DATA.json'
 import {AiOutlineArrowDown, AiOutlineArrowUp} from 'react-icons/ai'
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
@@ -52,11 +52,13 @@ const LeaveReport = () => {
 ]
   const columns = useMemo(()=>LEAVEREPORTCOLUMNS,[]);
   const data = useMemo(()=>LEAVEREPORT_DATA,[]);
-   const {getTableProps,getTableBodyProps,headerGroups,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
+   const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
     columns,
     data
   },
-  useSortBy,usePagination)
+  useGlobalFilter,
+  useSortBy,
+  usePagination)
   
   const {pageIndex}= state;
   return (
@@ -71,28 +73,17 @@ const LeaveReport = () => {
         <Button variant='warning'>Pdf</Button>
         </Col>
       </Row>
-      <Row>
+      <Row className=''>
       <Form className="d-flex flex-lg-row flex-column flex-xxl-row flex-xl-row flex-sm-column">
-          <Form.Control
-            placeholder="Employee"
-            className="m-2"
-          ></Form.Control>
           
-          <Form.Select placeholder="Select Department" className="m-2">
-            <option disabled selected>
-              Select Department
-            </option>
-            <option>FrontEnd Developer</option>
-            <option>BackEnd Developer</option>
-          </Form.Select>
-          <Form.Control  placeholder='From' type='date' className="m-2">
-            
-          </Form.Control>
-          <Form.Control  placeholder='To' type='date' className="m-2">
-            
-          </Form.Control>
+          <Col className='m-4'>
+          <Form.Control placeholder="Search here.." value={state.globalFilter || ''} onChange={(e)=>setGlobalFilter(e.target.value)}  className=""/>
+          </Col>
+          
+          <Col className='d-flex flex-column text-center m-4'>
           <Button
-            className="m-2 text-dark fw-bold"
+          
+            className=" text-dark fw-bold "
             style={{
               backgroundColor: "#00d4ff",
               outline: "none",
@@ -101,6 +92,7 @@ const LeaveReport = () => {
           >
             Search
           </Button>
+          </Col>
         </Form>
       </Row>
       <Row>

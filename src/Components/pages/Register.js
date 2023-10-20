@@ -1,9 +1,14 @@
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import MainLogo from "../Images/logo.jpeg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const history = useNavigate();
+  const handleLogin = () => {
+    
+    history('/login');
+  };
   return (
     <Container className="vh-100 d-flex flex-column flex-wrap-wrap justify-content-center align-items-center">
       <Row>
@@ -50,6 +55,7 @@ const Register = () => {
                 outline: "none",
                 border: "none",
               }}
+              onClick={handleLogin}
             >
               Register
             </Button>

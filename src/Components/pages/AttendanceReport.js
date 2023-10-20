@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
-import {useTable,useSortBy,usePagination} from 'react-table'
+import {useTable,useSortBy,usePagination,useGlobalFilter} from 'react-table'
 import ATTENDANCEREPORT_DATA from '../pages/Table/ATTENDEANCEREPORT_DATA.json'
 import {AiOutlineArrowDown, AiOutlineArrowUp} from 'react-icons/ai'
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
@@ -31,11 +31,13 @@ const AttendanceReport = () => {
 ]
   const columns = useMemo(()=>ATTENDANCEREPORTCOLUMNS,[]);
   const data = useMemo(()=>ATTENDANCEREPORT_DATA,[]);
-   const {getTableProps,getTableBodyProps,headerGroups,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
+   const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
     columns,
     data
   },
-  useSortBy,usePagination)
+  useGlobalFilter,
+  useSortBy,
+  usePagination)
   
   const {pageIndex}= state;
   return (
@@ -46,21 +48,16 @@ const AttendanceReport = () => {
         <h5>Attendance Report</h5>
         </Col>
       </Row>
-      <Row>
+      <Row className=''>
       <Form className="d-flex flex-lg-row flex-column flex-xxl-row flex-xl-row flex-sm-column">
-          <Form.Control
-            placeholder="Employee Name"
-            className="m-2"
-          ></Form.Control>
           
-          <Form.Control  placeholder='From' type='month' className="m-2">
-            
-          </Form.Control>
-          <Form.Control  placeholder='To'  type='month'  className="m-2">
-            
-          </Form.Control>
+          <Col className='m-4'>
+          <Form.Control placeholder="Search here..." value={state.globalFilter || ''} onChange={(e)=>setGlobalFilter(e.target.value)}  className=""/>
+          </Col>
+          <Col className='d-flex flex-column text-center m-4'>
           <Button
-            className="m-2 text-dark fw-bold"
+          
+            className=" text-dark fw-bold "
             style={{
               backgroundColor: "#00d4ff",
               outline: "none",
@@ -69,6 +66,7 @@ const AttendanceReport = () => {
           >
             Search
           </Button>
+          </Col>
         </Form>
       </Row>
       <Row>

@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from 'react'
 import { Button, Col, Container, FloatingLabel, Form, Modal, Row, Table } from 'react-bootstrap'
-import { BsThreeDotsVertical } from "react-icons/bs";
+
 import { FaEdit, FaPlus } from "react-icons/fa";
-import { IoMdGrid } from "react-icons/io";
+
 import { Link, useNavigate } from 'react-router-dom';
 import PROJECT_DATA from './Table/PROJECT_DATA.json'
 import { MdDelete } from 'react-icons/md';
-import {useTable,useSortBy,usePagination} from 'react-table'
+import {useTable,useSortBy,usePagination,useGlobalFilter} from 'react-table'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 
@@ -40,7 +40,7 @@ const Projects = () => {
     },
     {
         Header:"TEAM",
-        accessor:"Team"
+        accessor:"team"
     },
     {
         Header:"DEADLINE",
@@ -70,11 +70,13 @@ const Projects = () => {
  
     const columns = useMemo(()=>ProjectColumns,[]);
     const data = useMemo(()=>PROJECT_DATA,[]);
-     const {getTableProps,getTableBodyProps,headerGroups,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
+     const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
       columns,
       data
     },
-    useSortBy,usePagination)
+    useGlobalFilter,
+    useSortBy,
+    usePagination)
     
     const {pageIndex}= state;
   return (
@@ -113,35 +115,27 @@ const Projects = () => {
         </Button>
       </Col>
     </Row>
-    <Row>
+    <Row className=''>
       <Form className="d-flex flex-lg-row flex-column flex-xxl-row flex-xl-row flex-sm-column">
-        <Form.Control
-          placeholder="Project Name"
-          className="m-2"
-        ></Form.Control>
-        <Form.Control
-          placeholder="Employee Name"
-          className="m-2"
-        ></Form.Control>
-        <Form.Select placeholder="Designation" className="m-2">
-          <option disabled selected>
-            Select Role
-          </option>
-          <option>FrontEnd Developer</option>
-          <option>BackEnd Developer</option>
-        </Form.Select>
-        <Button
-          className="m-2 text-dark fw-bold"
-          style={{
-            backgroundColor: "#00d4ff",
-            outline: "none",
-            border: "none",
-          }}
-        >
-          Search
-        </Button>
-      </Form>
-    </Row>
+          
+          <Col className='m-4'>
+          <Form.Control placeholder="Search here..." value={state.globalFilter || ''} onChange={(e)=>setGlobalFilter(e.target.value)}  className=""/>
+          </Col>
+          <Col className='d-flex flex-column text-center m-4'>
+          <Button
+          
+            className=" text-dark fw-bold "
+            style={{
+              backgroundColor: "#00d4ff",
+              outline: "none",
+              border: "none",
+            }}
+          >
+            Search
+          </Button>
+          </Col>
+        </Form>
+      </Row>
   
     <Row>
     <Table striped bordered hover {...getTableProps()} responsive={true}>

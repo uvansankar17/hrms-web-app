@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
-import {useTable,useSortBy,usePagination} from 'react-table'
+import {useTable,useSortBy,usePagination,useGlobalFilter} from 'react-table'
 import USERREPORT_DATA from '../pages/Table/USERREPORT_DATA.json'
 import {AiOutlineArrowDown, AiOutlineArrowUp} from 'react-icons/ai'
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
@@ -40,13 +40,16 @@ const USERREPORTCOLUMNS = [
 ]
   const columns = useMemo(()=>USERREPORTCOLUMNS,[]);
   const data = useMemo(()=>USERREPORT_DATA,[]);
-   const {getTableProps,getTableBodyProps,headerGroups,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
+   const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
     columns,
     data
   },
-  useSortBy,usePagination)
+  useGlobalFilter,
+  useSortBy,
+  usePagination)
   
   const {pageIndex}= state;
+  
   return (
     <>
     <Container fluid className='d-flex flex-column'>
@@ -58,16 +61,11 @@ const USERREPORTCOLUMNS = [
       <Form className="d-flex flex-lg-row flex-column flex-xxl-row flex-xl-row flex-sm-column">
           
           <Col className='m-4'>
-          <Form.Select placeholder="Employee Designation"  className="">
-            <option disabled selected>
-              User Role
-            </option>
-            <option>FrontEnd Developer</option>
-            <option>BackEnd Developer</option>
-          </Form.Select>
+          <Form.Control placeholder="Search here..." value={state.globalFilter || ''} onChange={(e)=>setGlobalFilter(e.target.value)}  className=""/>
           </Col>
           <Col className='d-flex flex-column text-center m-4'>
           <Button
+          
             className=" text-dark fw-bold "
             style={{
               backgroundColor: "#00d4ff",
