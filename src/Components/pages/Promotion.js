@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from 'react'
-import { Button, Col, Container, Modal, Row, Table } from 'react-bootstrap'
+import { Button, Col, Container, Form, Modal, Row, Table } from 'react-bootstrap'
 import { FaPlus } from 'react-icons/fa6'
 import { Link, useNavigate } from 'react-router-dom'
 
 import  PROMOTION_DATA  from './Table/PROMOTION_DATA.json'
-import {useTable,useSortBy,usePagination} from 'react-table'
+import {useTable,useSortBy,usePagination,useGlobalFilter} from 'react-table'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 import { FaEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
@@ -62,11 +62,13 @@ const Promotion = () => {
  
     const columns = useMemo(()=>PromotionColumns,[]);
     const data = useMemo(()=>PROMOTION_DATA,[]);
-     const {getTableProps,getTableBodyProps,headerGroups,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
+     const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
       columns,
       data
     },
-    useSortBy,usePagination)
+    useGlobalFilter,
+    useSortBy,
+    usePagination)
     
     const {pageIndex}= state;
   return (
@@ -105,6 +107,27 @@ const Promotion = () => {
         </Button>
       </Col>
     </Row>
+    <Row className=''>
+      <Form className="d-flex flex-lg-row flex-column flex-xxl-row flex-xl-row flex-sm-column">
+          
+          <Col className='m-4'>
+          <Form.Control placeholder="Search here..." value={state.globalFilter || ''} onChange={(e)=>setGlobalFilter(e.target.value)}  className=""/>
+          </Col>
+          <Col className='d-flex flex-column text-center m-4'>
+          <Button
+          
+            className=" text-dark fw-bold "
+            style={{
+              backgroundColor: "#00d4ff",
+              outline: "none",
+              border: "none",
+            }}
+          >
+            Search
+          </Button>
+          </Col>
+        </Form>
+      </Row>
     <Row>
     <Table striped bordered hover {...getTableProps()} responsive={true}>
           <thead>
