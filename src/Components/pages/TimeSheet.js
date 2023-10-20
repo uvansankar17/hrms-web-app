@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { Button, Col, Container, FloatingLabel, Form, Modal, Row, Table } from 'react-bootstrap'
+import { Button, Col, Container, Form, Modal, Row, Table } from 'react-bootstrap'
 import { FaEdit } from 'react-icons/fa'
 import { FaPlus } from 'react-icons/fa6'
 import { MdDelete } from 'react-icons/md'
@@ -21,6 +21,9 @@ const TimeSheet = () => {
         setDeleteShow(true);
       }
  
+ 
+ 
+const columns = useMemo(() => {
   const TimeSheetColumn = [
     {
         Header:"#",
@@ -63,8 +66,8 @@ const TimeSheet = () => {
     
     
 ]
- 
-    const columns = useMemo(()=>TimeSheetColumn,[]);
+  return TimeSheetColumn;
+}, []);
     const data = useMemo(()=>TIMESHEET_DATA,[]);
      const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
       columns,

@@ -6,6 +6,8 @@ import {AiOutlineArrowDown, AiOutlineArrowUp} from 'react-icons/ai'
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
 
 const AttendanceReport = () => {
+  
+const columns = useMemo(() => {
   const ATTENDANCEREPORTCOLUMNS = [
     {
         Header:"#",
@@ -29,7 +31,9 @@ const AttendanceReport = () => {
     },
  
 ]
-  const columns = useMemo(()=>ATTENDANCEREPORTCOLUMNS,[]);
+  return ATTENDANCEREPORTCOLUMNS;
+}, []);
+
   const data = useMemo(()=>ATTENDANCEREPORT_DATA,[]);
    const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
     columns,

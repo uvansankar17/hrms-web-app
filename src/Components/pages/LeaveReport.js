@@ -6,6 +6,8 @@ import {AiOutlineArrowDown, AiOutlineArrowUp} from 'react-icons/ai'
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
 
 const LeaveReport = () => {
+
+const columns = useMemo(() => {
   const LEAVEREPORTCOLUMNS = [
     {
         Header:"#",
@@ -50,7 +52,8 @@ const LeaveReport = () => {
     
    
 ]
-  const columns = useMemo(()=>LEAVEREPORTCOLUMNS,[]);
+  return LEAVEREPORTCOLUMNS;
+}, []);
   const data = useMemo(()=>LEAVEREPORT_DATA,[]);
    const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
     columns,

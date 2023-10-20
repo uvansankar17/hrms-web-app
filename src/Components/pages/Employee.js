@@ -18,6 +18,9 @@ const Employee = () => {
         setDeleteShow(true);
       }
  
+ 
+ 
+const columns = useMemo(() => {
   const EmployeeColumn = [
     {
         Header:"#",
@@ -60,8 +63,8 @@ const Employee = () => {
     
     
 ]
- 
-    const columns = useMemo(()=>EmployeeColumn,[]);
+  return EmployeeColumn;
+}, []);
     const data = useMemo(()=>EMPLOYEES_DATA,[]);
      const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
       columns,

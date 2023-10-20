@@ -20,55 +20,58 @@ const Training = () => {
       setDeleteShow(true);
     }
 
-const TrainingColumns = [
-  {
-      Header:"#",
-      accessor:"id"
-  },
-  {
-      Header:"TRAINING TYPE",
-      accessor:"training_type"
-  },
-  
-  {
-      Header:"EMPLOYEE",
-      accessor:"employee"
-  },
-  {
-    Header:"TRAINER",
-    accessor:"trainer"
-},
-  {
-      Header:"TIME DURATION",
-      accessor:"time_duration"
-  },
-  {
-      Header:"DESCRIPTION",
-      accessor:"description"
-  },
-  {
-    Header:"COST",
-    accessor:"cost"
-},
-{
-  Header:"STATUS",
-  accessor:"status"
-},
-  {
-      Header:"ACTION",
-      accessor:"action",
-      Cell:()=>(
-          <div className='d-flex align-items-center justify-content-center flex-row'>
-          <Link to={"/trainingEditForm"} ><Button variant='warning' ><FaEdit/></Button></Link>
-          <Button variant='danger' className='m-1' onClick={()=>deleteHandleShow()} ><MdDelete/></Button>
-          </div>
-      )
-  }
-  
-  
-]
 
-  const columns = useMemo(()=>TrainingColumns,[]);
+
+const columns = useMemo(() => {
+  const TrainingColumns = [
+    {
+        Header:"#",
+        accessor:"id"
+    },
+    {
+        Header:"TRAINING TYPE",
+        accessor:"training_type"
+    },
+    
+    {
+        Header:"EMPLOYEE",
+        accessor:"employee"
+    },
+    {
+      Header:"TRAINER",
+      accessor:"trainer"
+  },
+    {
+        Header:"TIME DURATION",
+        accessor:"time_duration"
+    },
+    {
+        Header:"DESCRIPTION",
+        accessor:"description"
+    },
+    {
+      Header:"COST",
+      accessor:"cost"
+  },
+  {
+    Header:"STATUS",
+    accessor:"status"
+  },
+    {
+        Header:"ACTION",
+        accessor:"action",
+        Cell:()=>(
+            <div className='d-flex align-items-center justify-content-center flex-row'>
+            <Link to={"/trainingEditForm"} ><Button variant='warning' ><FaEdit/></Button></Link>
+            <Button variant='danger' className='m-1' onClick={()=>deleteHandleShow()} ><MdDelete/></Button>
+            </div>
+        )
+    }
+    
+    
+  ]
+  return TrainingColumns;
+}, []);
   const data = useMemo(()=>TRAINING_DATA,[]);
    const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
     columns,

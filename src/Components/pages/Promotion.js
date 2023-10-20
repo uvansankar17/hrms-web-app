@@ -21,6 +21,9 @@ const Promotion = () => {
         setDeleteShow(true);
       }
   const handleShow = () =>navigate("/promotionAddForm");
+
+ 
+const columns = useMemo(() => {
   const PromotionColumns = [
     {
         Header:"#",
@@ -59,8 +62,8 @@ const Promotion = () => {
     
     
 ]
- 
-    const columns = useMemo(()=>PromotionColumns,[]);
+  return PromotionColumns;
+}, []);
     const data = useMemo(()=>PROMOTION_DATA,[]);
      const {getTableProps,getTableBodyProps,headerGroups,setGlobalFilter,prepareRow,page,nextPage,previousPage,canNextPage,canPreviousPage,pageOptions,state} = useTable({
       columns,
