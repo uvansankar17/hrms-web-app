@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { Accordion, Col, Container, Row } from 'react-bootstrap'
+import React from 'react'
+import { Accordion, Container, Row } from 'react-bootstrap'
 import { SlCalender} from 'react-icons/sl';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../pages/Css/Sidebar.css'
 import { FaUsersGear} from 'react-icons/fa6';
 import { BiNotepad, BiSolidPieChartAlt2, BiSolidUser, BiSolidUserDetail } from 'react-icons/bi';
@@ -13,6 +13,8 @@ import { IoSettingsOutline} from 'react-icons/io5';
 import { TbSpeakerphone } from 'react-icons/tb';
 import { PiStudentDuotone } from 'react-icons/pi';
 import { BsTicketPerforated } from 'react-icons/bs';
+import { LiaMoneyCheckAltSolid } from 'react-icons/lia';
+
 
 const Sidebar = () => {
 
@@ -33,7 +35,7 @@ const Sidebar = () => {
         </Row>
         <Row className='p-2 d-flex align-items-center'>
         <Link to={"/employee"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><BiSolidUser size={20} style={{marginRight:"10px",}}/> Employee</h6>
+        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><BiSolidUser size={20} style={{marginRight:"10px",}}/>All Employees</h6>
 
         </Link>
         </Row>
@@ -94,6 +96,12 @@ const Sidebar = () => {
         <Row className='p-2 d-flex align-items-center'>
         <Link to={"/project"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
         <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><AiOutlineProject size={20} style={{marginRight:"10px",}}/>Projects</h6>
+
+        </Link>
+        </Row>
+        <Row className='p-2 d-flex align-items-center'>
+        <Link to={"/payslip"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><LiaMoneyCheckAltSolid size={20} style={{marginRight:"10px",}}/>PaySlip</h6>
 
         </Link>
         </Row>

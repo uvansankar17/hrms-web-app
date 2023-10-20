@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import MainLogo from "../Images/logo.jpeg";
 import {
   Accordion,
-  Badge,
   Col,
   Container,
-  Dropdown,
-  Form,
   Offcanvas,
   Row,
 } from "react-bootstrap";
@@ -20,8 +17,7 @@ import { PiStudentDuotone} from "react-icons/pi";
 
 
 
-import { Link, useNavigate } from "react-router-dom";
-import { GrUserAdmin } from "react-icons/gr";
+import { Link} from "react-router-dom";
 import { BiNotepad, BiSolidPieChartAlt2, BiSolidUser, BiSolidUserDetail } from "react-icons/bi";
 import { SiGooglesheets } from "react-icons/si";
 import { SlCalender } from "react-icons/sl";
@@ -30,6 +26,7 @@ import { GiShakingHands } from "react-icons/gi";
 import { IoSettingsOutline } from "react-icons/io5";
 import { TbSpeakerphone } from "react-icons/tb";
 import { FaUsersGear } from "react-icons/fa6";
+import { LiaMoneyCheckAltSolid } from "react-icons/lia";
 
 
 
@@ -194,6 +191,12 @@ const MainNav = () => {
         <Row className='p-2 d-flex align-items-center' onClick={()=>setShow(false)}>
         <Link to={"/project"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
         <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><AiOutlineProject size={20} style={{marginRight:"10px",}}/>Projects</h6>
+
+        </Link>
+        </Row>
+        <Row className='p-2 d-flex align-items-center' onClick={()=>setShow(false)}>
+        <Link to={"/payslip"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><LiaMoneyCheckAltSolid size={20} style={{marginRight:"10px",}}/>PaySlip</h6>
 
         </Link>
         </Row>
