@@ -70,7 +70,7 @@ const Login = ({ setAuthenticated }) => {
             
             <Button className='mt-3 text-dark btn btn-outline-dark' style={{backgroundColor:"#00d4ff",outline:"none",border:"none"}} onClick={handleLogin}>Login</Button>
             <Row className='m-3'>
-                <p>Don't have an account yet?<Link style={{textDecoration:"none"}} to={"/register"}>Register</Link></p>
+                <p style={{textAlign:"center"}}>Don't have an account yet?<Link style={{textDecoration:"none"}} to={"/register"}>Register</Link></p>
             </Row>
         </Form>
             </Col>
