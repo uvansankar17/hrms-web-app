@@ -19,7 +19,7 @@ const PaySlip = () => {
       <Row className='mt-2 mb-4' style={{boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"}} ref={targetRef}>
       <Row className='d- flex flex-row mb-xxl-4 mb-xl-4 mb-lg-4 mb-sm-2 mb-md-2 align-items-center'>
         <Col className='mt-4 d-flex justify-content-center'>
-        <h6 style={{textDecoration:"underline"}}>PAYSLIP FOR THE MONTH OF SEP 2023</h6>
+        <h6 className='' style={{textDecoration:"underline",textAlign:"center"}}>PAYSLIP FOR THE MONTH OF SEP 2023</h6>
         </Col>
       </Row>
       <Row className='d-flex flex-xxl-row flex-xl-row flex-lg-row flex-sm-column flex-column flex-md-column mt-2 mb-2 align-items-center justify-content-sm-center justify-content-md-center'>
