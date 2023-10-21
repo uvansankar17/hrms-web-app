@@ -46,6 +46,14 @@ const columns = useMemo(() => {
         accessor:"ticket_follower"
     },
     {
+      Header:"CLIENT",
+      accessor:"client"
+  },
+  {
+    Header:"CREATED DATE",
+    accessor:"create_date"
+  },
+    {
         Header:"PRIORITY",
         accessor:"priority"
     },
@@ -53,14 +61,7 @@ const columns = useMemo(() => {
       Header:"STATUS",
       accessor:"status"
   },
-  {
-    Header:"CLIENT",
-    accessor:"client"
-},
-{
-  Header:"CREATED DATE",
-  accessor:"create_date"
-},
+
 {
   Header:"DESCRIPTION",
   accessor:"description"
