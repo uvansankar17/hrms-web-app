@@ -36,6 +36,8 @@ import PromotionEditForm from "./Components/pages/Forms/PromotionEditForm";
 import EmployeeAddForm from "./Components/pages/Forms/EmployeeAddForm";
 import EmployeeEditForm from "./Components/pages/Forms/EmployeeEditForm";
 import PaySlip from "./Components/pages/PaySlip";
+import TicketAddForm from "./Components/pages/Forms/TicketAddForm";
+import TicketEditForm from "./Components/pages/Forms/TicketEditForm";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -173,6 +175,14 @@ function App() {
                 <Route
                   path="/employeeEditForm"
                   element={authenticated ? <EmployeeEditForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/ticketAddForm"
+                  element={authenticated ? <TicketAddForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/ticketEditForm"
+                  element={authenticated ? <TicketEditForm/> : <Navigate to="/login" />}
                 />
               </Routes>
             </Col>
