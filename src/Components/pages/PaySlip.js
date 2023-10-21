@@ -47,9 +47,9 @@ const PaySlip = () => {
         <Col>
               <address>
                 <strong className='m-0'>John Doe</strong>
-                <p className='m-0'>Web Designer</p>
-                <p className='m-0'>Employee ID: DT-0028</p>
-                <p className='m-0'>Joining Date : 1 JAN 2022</p>
+                <p className='m-1'>Web Designer</p>
+                <p className='m-1'>Employee ID: DT-0028</p>
+                <p className='m-1'>Joining Date : 1 JAN 2022</p>
               </address>
         </Col>
       </Row>
