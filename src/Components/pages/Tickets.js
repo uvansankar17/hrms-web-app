@@ -214,7 +214,7 @@ const columns = useMemo(() => {
           <Modal.Title>Promotion</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            Confirm to Delete this Promotion..?
+            Confirm to Delete this Ticket..?
         </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={deleteHandleClose}>
