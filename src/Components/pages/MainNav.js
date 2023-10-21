@@ -130,7 +130,7 @@ const MainNav = () => {
         </Row>
         <Row className='p-2 d-flex align-items-center' onClick={()=>setShow(false)}>
         <Link to={"/employee"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><BiSolidUser size={20} style={{marginRight:"10px",}}/> Employee</h6>
+        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><BiSolidUser size={20} style={{marginRight:"10px",}}/>All Employees</h6>
 
         </Link>
         </Row>
