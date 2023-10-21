@@ -111,7 +111,7 @@ const columns = useMemo(() => {
       <Form className="d-flex flex-lg-row flex-column flex-xxl-row flex-xl-row flex-sm-column">
           
           <Col className='m-4'>
-          <Form.Control placeholder="Employee Name or Project Name" value={state.globalFilter || ''} onChange={(e)=>setGlobalFilter(e.target.value)}  className=""/>
+          <Form.Control placeholder="Search here..." value={state.globalFilter || ''} onChange={(e)=>setGlobalFilter(e.target.value)}  className=""/>
           </Col>
           <Col className='d-flex flex-column text-center m-4'>
           <Button
