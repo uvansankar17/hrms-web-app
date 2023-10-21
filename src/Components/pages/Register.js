@@ -60,7 +60,7 @@ const Register = () => {
               Register
             </Button>
             <Row className="m-4">
-              <p>
+              <p style={{textAlign:"center"}}>
                 Already have an account?
                 <Link style={{ textDecoration: "none" }} to={"/"}>
                   Login
