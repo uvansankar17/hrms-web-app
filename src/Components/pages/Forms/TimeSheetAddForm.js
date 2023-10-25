@@ -96,7 +96,7 @@ const TimeSheetAddForm = () => {
          
   
           
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
+            <Col className='m-2' lg="10" xxl="10" xl="10" md="10" sm="10">
             <Form.Group className='mt-2'>
             <Form.Label>Description</Form.Label>
             <FloatingLabel  controlId="floatingTextarea2" label="type here.....">
