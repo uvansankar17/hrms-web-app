@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import MainLogo from "../Images/logo.jpeg";
+import '../pages/Css/MainNav.css'
 import {
   Accordion,
   Col,
   Container,
+  Dropdown,
   Offcanvas,
   Row,
 } from "react-bootstrap";
@@ -17,7 +19,7 @@ import { PiStudentDuotone} from "react-icons/pi";
 
 
 
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { BiNotepad, BiSolidPieChartAlt2, BiSolidUser, BiSolidUserDetail } from "react-icons/bi";
 import { SiGooglesheets } from "react-icons/si";
 import { SlCalender } from "react-icons/sl";
@@ -30,15 +32,27 @@ import { LiaMoneyCheckAltSolid } from "react-icons/lia";
 
 
 
-const MainNav = () => {
+const MainNav = ({authenticated,setAuthenticated}) => {
+  
   const [show, setShow] = useState(false);
+  const history = useNavigate();
 
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleLogin = () => {
+    // Simulate authentication by setting authenticated to false
+    
+    setAuthenticated(false);
+
+    
+    //redirect to the login page ("/").
+    history('/login');
+  };
 
   return (
     <>
+    
       <Container
         fluid
         className="d-flex  flex-row flex-wrap-wrap justify-content-between align-items-center overflowX-hidden"
@@ -79,17 +93,48 @@ const MainNav = () => {
         </Row>
         <Row className="d-flex mt-1">
           <Col className="d-lg-none d-sm-flex">
-            <BsThreeDotsVertical size={25} style={{ cursor: "pointer" }} />
+          <Dropdown>
+      <Dropdown.Toggle className="mobile-view-dropdown" id="dropdown-basic" style={{backgroundColor:"transparent",border:"none"}}>
+      <BsThreeDotsVertical size={25} style={{ cursor: "pointer",color:"black" }} />
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+      
+        
+        {
+          !authenticated ? <Dropdown.Item href="#/action-2">Login</Dropdown.Item> :<>
+          <Dropdown.Item href="#/action-2">My Profile</Dropdown.Item> <Dropdown.Item onClick={handleLogin}>Logout</Dropdown.Item>
+          </>
+        }
+      </Dropdown.Menu>
+    </Dropdown>
+            
           </Col>
           
           <Col className='d-lg-flex d-none d-sm-none flex-row flex-wrap-wrap justify-content-center"align-items-center'>
             <div>
-              <img
+             
+              
+    <Dropdown>
+      <Dropdown.Toggle  id="dropdown-basic" style={{backgroundColor:"transparent",border:"none"}}>
+      <img
                 src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
                 className="rounded-circle"
                 style={{ width: "30px" }}
                 alt="Avatar"
               />
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+      
+        
+        {
+          !authenticated ? <Dropdown.Item href="#/action-2">Login</Dropdown.Item> :<>
+          <Dropdown.Item href="#/action-2">My Profile</Dropdown.Item> <Dropdown.Item onClick={handleLogin}>Logout</Dropdown.Item>
+          </>
+        }
+      </Dropdown.Menu>
+    </Dropdown>
             </div>
            
           </Col>
