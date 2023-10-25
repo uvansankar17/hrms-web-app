@@ -45,7 +45,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {authenticated && <MainNav />}
+        {authenticated && <MainNav authenticated={authenticated} setAuthenticated={setAuthenticated} />}
 
         <Container fluid>
           <Row>
