@@ -1,0 +1,6 @@
+.mobile-view-dropdown::after {
+    display: none; 
+  }
+  .dropdown-toggle::after {
+    color: black;
+}
