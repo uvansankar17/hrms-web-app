@@ -24,3 +24,8 @@
   .sidebar::-webkit-scrollbar{
     display: none;
 }
+.accordion-item, .accordion-item:focus, .accordion-item:active,
+.accordion-header, .accordion-header:focus, .accordion-header:active,
+.accordion-button, .accordion-button:focus, .accordion-button:active {
+  outline: none;
+}
