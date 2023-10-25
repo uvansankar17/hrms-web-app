@@ -3,7 +3,7 @@ import React from 'react'
 const Leave = () => {
   return (
     <div>
-      <h1>Leave</h1>
+      <h1>sindhuja</h1>
     </div>
   )
 }
