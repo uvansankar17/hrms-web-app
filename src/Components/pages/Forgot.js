@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import MainLogo from "../Images/logo.jpeg";
 import { Link, useNavigate } from "react-router-dom";
 import { TbAlertSquareRounded } from "react-icons/tb";
 import { IoIosArrowBack } from "react-icons/io";
+import { Formik } from "formik";
+import { LogAndRegSchema } from './Forms/Validations/LoginValidation'
+
 const Forgot = () => {
-  const Navigate = useNavigate();
+  const [email,setEmail]=useState('');
+  
+const history = useNavigate();
+const handleForgot = () => {
+  
+  console.log("Email : "+email);
+  
+  history('/reset');
+  setEmail("")
+  
+};
+  const initialValues ={
+    email:'',
+    
+  };
   return (
     <Container className="vh-100 d-flex flex-column flex-wrap-wrap justify-content-center align-items-center">
       <Row>
@@ -28,21 +45,34 @@ const Forgot = () => {
           </p>
         </Col>
         <Col>
-          <Form className="d-flex flex-column justify-content-center">
-            <Form.Group>
-              <Form.Label htmlFor="email">Email*</Form.Label>
-              <Form.Control type="email" size="md" id="email"></Form.Control>
-            </Form.Group>
-
-            <Button
+        <Formik
+      initialValues={initialValues}
+      validationSchema={LogAndRegSchema}
+      
+    >
+      {({values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+          isSubmitting, })=>(
+        <Form className='d-flex flex-column justify-content-center'>
+        <Form.Group>
+            <Form.Label htmlFor='email'>Email*</Form.Label>
+            <Form.Control name='email' type="email" size='md' id='email' className={`form-control ${touched.email && errors.email ? "is-invalid" : ""}`} onChange={(e)=>{setEmail(e.target.value);handleChange(e);}} onBlur={handleBlur} ></Form.Control>
+            {touched.email && errors.email ?<p className='text-danger m-1'>{errors.email}</p> : ""}
+        </Form.Group>
+       
+        
+        <Button
               className="mt-3 text-dark btn btn-outline-dark"
               style={{
                 backgroundColor: "#00d4ff",
                 outline: "none",
                 border: "none",
-                textDecoration: "none",
               }}
-              onClick={() => Navigate("/reset")}
+              type='submit' disabled={isSubmitting} onClick={email !=='' ? handleForgot : handleSubmit  }
             >
               Forgot Password
             </Button>
@@ -56,6 +86,8 @@ const Forgot = () => {
               Back to Login
             </Link>
           </Form>
+           )}
+          </Formik>
         </Col>
       </Row>
     </Container>

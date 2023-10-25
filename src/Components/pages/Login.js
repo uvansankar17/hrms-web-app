@@ -3,28 +3,39 @@ import { Button, Col, Container, Form,Row } from 'react-bootstrap'
 import MainLogo from '../Images/logo.jpeg'
 import { Link, useNavigate } from 'react-router-dom'
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
+import { Formik } from 'formik'
+import { LogAndRegSchema } from './Forms/Validations/LoginValidation'
 
 const Login = ({ setAuthenticated }) => {
-    const [password,setPassword]=useState(false);
+    const [passwordIcon,setPasswordIcon]=useState(false);
+    const [email,setEmail]=useState('');
+    const [password,setPassword]=useState('');
     const history = useNavigate();
+    
+
+    const initialValues ={
+        email:'',
+        password: ''
+      };
     
     const showPassword = ()=>{
         let eye =document.getElementById("password");
         if(eye.type==="password"){
             eye.type = 'text';
-            setPassword(true)
+            setPasswordIcon(true)
         }else{
             eye.type = 'password';
-            setPassword(false)
+            setPasswordIcon(false)
         }
     }
 
     const handleLogin = () => {
         // Simulate authentication by setting authenticated to true.
         setAuthenticated(true);
-    
-        // You can also redirect the user to a different page after successful login.
-        // For example, redirect to the admin dashboard ("/").
+        console.log("Email : "+email);
+        console.log("Password : "+password);
+        setEmail("")
+        setPassword("")
         history('/');
       };
   return (
@@ -40,39 +51,60 @@ const Login = ({ setAuthenticated }) => {
             <p className='text-secondary'>Access to our dashboard</p>
             </Col>
             <Col> 
-            <Form className='d-flex flex-column justify-content-center'>
-            <Form.Group>
-                <Form.Label htmlFor='email'>Email*</Form.Label>
-                <Form.Control type="email" size='md' id='email'></Form.Control>
-            </Form.Group>
-            <Form.Group>
-                <Row className='d-flex flex-row justify align-items-center'>
-                    <Col className='d-flex flex-row justify-end align-items-center'>
-                    <Form.Label htmlFor='password' className='d-flex flex-row justify-start'>password*</Form.Label>
-                    </Col>
-                    <Col>
-                    <Link to={"/forgot"} className='d-flex flex-row justify-content-end text-secondary fs-10'style={{cursor:"pointer",textDecoration:"none"}}>Forgot password?</Link>
-                    </Col>
-                </Row>
-                <Row className='d-flex flex-row justify-between align-items-center'>
-                    <Col className='d-flex flex-row justify-content-end align-items-center'>
-                    <Form.Control className='position-relative' type="password" size='md' id='password'></Form.Control>
-                    <div className='position-absolute m-2 ' style={{cursor:"pointer"}} onClick={showPassword}>
-                        {
-                            !password?<AiOutlineEyeInvisible/>:<AiOutlineEye />
-                        }
-                    </div>
-                    </Col>
-                   
-                </Row>
+            <Formik
+      initialValues={initialValues}
+      validationSchema={LogAndRegSchema}
+      
+    >
+      {({values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+          isSubmitting, })=>(
+        <Form className='d-flex flex-column justify-content-center'>
+        <Form.Group>
+            <Form.Label htmlFor='email'>Email*</Form.Label>
+            <Form.Control name='email' type="email" size='md' id='email' className={`form-control ${touched.email && errors.email ? "is-invalid" : ""}`} onChange={(e)=>{setEmail(e.target.value);handleChange(e);}} onBlur={handleBlur} ></Form.Control>
+            {touched.email && errors.email ?<p className='text-danger'>{errors.email}</p> : ""}
+        </Form.Group>
+        <Form.Group>
+            <Row className='d-flex flex-row justify align-items-center'>
+                <Col className='d-flex flex-row justify-end align-items-center'>
+                <Form.Label htmlFor='password' className='d-flex flex-row justify-start'>password*</Form.Label>
+                </Col>
                 
-            </Form.Group>
-            
-            <Button className='mt-3 text-dark btn btn-outline-dark' style={{backgroundColor:"#00d4ff",outline:"none",border:"none"}} onClick={handleLogin}>Login</Button>
-            <Row className='m-3'>
-                <p style={{textAlign:"center"}}>Don't have an account yet?<Link style={{textDecoration:"none"}} to={"/register"}>Register</Link></p>
             </Row>
-        </Form>
+            <Row className='d-flex flex-row justify-between align-items-center'>
+                <Col className='d-flex flex-row justify-content-end align-items-center'>
+                <Form.Control name='password' type="password" size='md' id='password'className={`position-relative form-control ${touched.password && errors.password ? "is-invalid" : ""}`} onChange={(e)=>{setPassword(e.target.value);handleChange(e);}}  onBlur={handleBlur}></Form.Control>
+                <div className='position-absolute m-2 ' style={{cursor:"pointer"}} onClick={showPassword}>
+                    {
+                        !passwordIcon?<AiOutlineEyeInvisible/>:<AiOutlineEye />
+                    }
+                </div>
+                </Col>
+               
+            </Row>
+            {touched.password && errors.password ?<p className='text-danger'>{errors.password}</p> : ""}
+        </Form.Group>
+        
+        <Button className='mt-3 text-dark btn btn-outline-dark' style={{backgroundColor:"#00d4ff",outline:"none",border:"none"}}  type='submit' disabled={isSubmitting} onClick={email !==''&& password !== '' ? handleLogin : handleSubmit  }>Login</Button>
+        <Row className='mt-2'>
+        <Col>
+                <Link to={"/forgot"} className='d-flex flex-row justify-content-center  fs-10'style={{cursor:"pointer"}}>Forgot password?</Link>
+                </Col>
+        </Row>
+
+        <Row className='m-3'>
+            
+            <p style={{textAlign:"center"}}>Don't have an account yet?<Link className="m-1" style={{textDecoration:"none"}} to={"/register"}>Register</Link></p>
+        </Row>
+    </Form>
+      )}
+    </Formik>
+            
             </Col>
         </Row>
     </Container>
