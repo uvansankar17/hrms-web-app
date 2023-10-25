@@ -55,10 +55,10 @@ const columns = useMemo(() => {
       <Row className=''>
       <Form className="d-flex flex-lg-row flex-column flex-xxl-row flex-xl-row flex-sm-column">
           
-          <Col className='m-4'>
+          <Col className='m-4' xxl={3} xl={3} lg={3} sm={3} md={3}>
           <Form.Control placeholder="Search here..." value={state.globalFilter || ''} onChange={(e)=>setGlobalFilter(e.target.value)}  className=""/>
           </Col>
-          <Col className='d-flex flex-column text-center m-4'>
+          <Col className='d-flex flex-column text-center m-4' xxl={3} xl={3} lg={3} sm={3} md={3}>
           <Button
           
             className=" text-dark fw-bold "
@@ -74,7 +74,7 @@ const columns = useMemo(() => {
         </Form>
       </Row>
       <Row>
-        <Table striped bordered hover {...getTableProps()} responsive={true}>
+        <Table striped bordered hover  {...getTableProps()} responsive={true}>
           <thead>
             {
               headerGroups.map((headerGroups)=>(
@@ -99,7 +99,7 @@ const columns = useMemo(() => {
                 page.map(row => {
                   prepareRow(row)
                   return(
-                    <tr {...row.getRowProps()}>
+                    <tr {...row.getRowProps()} className="custom-hover">
                       {
                         row.cells.map((cell)=>{
                           return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>

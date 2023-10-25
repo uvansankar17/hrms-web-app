@@ -7,6 +7,7 @@ import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
 import { FaEdit, FaPlus } from "react-icons/fa";
 import { MdDelete } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
+import './Css/Employee.css'
 const Employee = () => {
   const naviagte = useNavigate();
   const handleShow = () => naviagte("/employeeAddForm");
@@ -104,12 +105,12 @@ const columns = useMemo(() => {
         </Col>
       </Row>
       <Row className=''>
-      <Form className="d-flex flex-lg-row flex-column flex-xxl-row flex-xl-row flex-sm-column">
+      <Form className="d-flex flex-lg-row flex-column flex-xxl-row flex-xl-row flex-sm-column flex-md-row">
           
-          <Col className='m-4'>
+          <Col className='m-4' xxl={3} xl={3} lg={3} sm={3} md={3}>
           <Form.Control placeholder="Search here..." value={state.globalFilter || ''} onChange={(e)=>setGlobalFilter(e.target.value)}  className=""/>
           </Col>
-          <Col className='d-flex flex-column text-center m-4'>
+          <Col className='d-flex flex-column text-center m-4' xxl={3} xl={3} lg={3} sm={3} md={3}>
           <Button
           
             className=" text-dark fw-bold "
