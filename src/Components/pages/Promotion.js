@@ -1,12 +1,12 @@
 import React, {useState } from 'react'
-import { Button,Container, Modal, Row } from 'react-bootstrap'
+import { Button,Container,Row } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import  PROMOTION_DATA  from './Table/PROMOTION_DATA.json'
 import { FaEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
 import BasicTable from './Table/BasicTable'
 import Header from '../Header'
-
+import DeleteModel from '../DeleteModel'
 
 const Promotion = () => {
   const navigate =useNavigate()
@@ -72,22 +72,8 @@ const Promotion = () => {
     </Row>
 
   </Container>
-  <Modal show={deleteShow} onHide={deleteHandleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Promotion</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            Confirm to Delete this Promotion..?
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={deleteHandleClose}>
-            Yes
-          </Button>
-          <Button variant="secondary" onClick={deleteHandleClose}>
-            No
-          </Button>
-        </Modal.Footer>
-      </Modal>
+  <DeleteModel DELETESTATE={deleteShow} ONCLICK={deleteHandleClose} DESCRIPTION="Promotion" DELETETITLE="Promotion"/>
+
   </>
   )
 }

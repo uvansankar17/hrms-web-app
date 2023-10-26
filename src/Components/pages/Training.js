@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Button, Col, Container, Modal, Row,} from 'react-bootstrap'
-import { FaPlus } from 'react-icons/fa6'
+import { Button, Container, Row,} from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import  TRAINING_DATA  from './Table/TRAINING_DATA.json'
 import { FaEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
-
 import BasicTable from './Table/BasicTable'
+import Header from '../Header'
+import DeleteModel from '../DeleteModel'
 
 const Training = () => {
   const navigate =useNavigate()
@@ -70,59 +70,15 @@ const Training = () => {
   return (
   <>
     <Container fluid className="">
-    <Row className="d-flex  flex-row  justify-content-between align-items-center mt-3 mb-3">
-      <Col className="d-flex  flex-column flex-wrap-wrap align-content-center ">
-        <h4>Training</h4>
-        
-      </Col>
-      <Col className="d-flex  flex-row flex-wrap-wrap justify-content-end align-items-center">
-        <div
-          className="d-lg-block d-none d-xl-block d-sm-none align-items-center shadow m-2 p-1 fs-4 rounded"
-          style={{ cursor: "pointer" }}
-        >
-         
-        </div>
-       
-        <Button
-          variant="success"
-          className="d-lg-block d-xxl-block d-none d-sm-none rounded text-bold"
-          size="sm"
-          onClick={handleShow}
-        >
-          <FaPlus className="m-2" />
-          Add New
-        </Button>
-        <Button
-          variant="success"
-          className="d-lg-none d-xxl-none d-sm-flex"
-          size="sm"
-          onClick={handleShow}
-        >
-          <FaPlus className="m-2" />
-         
-        </Button>
-      </Col>
+    <Row>
+    <Header ONCLICK={handleShow} HEADING="Training" BUTTON_NAME="Add Training"/>
     </Row>
     <Row className=''>
     <BasicTable COLUMNS={COLUMNS} MOCK_DATA={TRAINING_DATA} />
     </Row>
   </Container>
-  <Modal show={deleteShow} onHide={deleteHandleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Training</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            Confirm to Delete this Training..?
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={deleteHandleClose}>
-            Yes
-          </Button>
-          <Button variant="secondary" onClick={deleteHandleClose}>
-            No
-          </Button>
-        </Modal.Footer>
-      </Modal>
+  <DeleteModel DELETESTATE={deleteShow} ONCLICK={deleteHandleClose} DESCRIPTION="Training" DELETETITLE="Training"/>
+
   </>
   )
 }

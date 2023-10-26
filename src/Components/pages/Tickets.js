@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Button,Container,Modal, Row} from 'react-bootstrap'
+import { Button,Container, Row} from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import  TICKET_DATA  from './Table/TICKET_DATA.json'
 import { FaEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
 import BasicTable from './Table/BasicTable'
 import Header from '../Header'
+import DeleteModel from '../DeleteModel'
 
 const Tickets = () => {
   const navigate =useNavigate()
@@ -90,22 +91,8 @@ const Tickets = () => {
     <BasicTable COLUMNS={COLUMNS} MOCK_DATA={TICKET_DATA} />
     </Row>
   </Container>
-  <Modal show={deleteShow} onHide={deleteHandleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Promotion</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            Confirm to Delete this Ticket..?
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={deleteHandleClose}>
-            Yes
-          </Button>
-          <Button variant="secondary" onClick={deleteHandleClose}>
-            No
-          </Button>
-        </Modal.Footer>
-      </Modal>
+  <DeleteModel DELETESTATE={deleteShow} ONCLICK={deleteHandleClose} DESCRIPTION="Tickets" DELETETITLE="Ticket"/>
+
   </>
   )
 }

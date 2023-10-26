@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Container, Modal, Row } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
 import EMPLOYEES_DATA from './Table/EMPLOYEES_DATA.json';
 import { FaEdit} from "react-icons/fa";
 import { MdDelete } from 'react-icons/md';
@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Css/Employee.css';
 import BasicTable from './Table/BasicTable';
 import Header from '../Header';
+import DeleteModel from '../DeleteModel';
 
 const Employee = () => {
   const navigate = useNavigate();
@@ -72,22 +73,8 @@ const Employee = () => {
           <BasicTable COLUMNS={COLUMNS} MOCK_DATA={EMPLOYEES_DATA} />
         </Row>
       </Container>
-      <Modal show={deleteShow} onHide={deleteHandleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>All Employees</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          Confirm to Delete this Employee..?
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={deleteHandleClose}>
-            Yes
-          </Button>
-          <Button variant="secondary" onClick={deleteHandleClose}>
-            No
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <DeleteModel DELETESTATE={deleteShow} ONCLICK={deleteHandleClose} DESCRIPTION="All Employees" DELETETITLE="Employee"/>
+
     </div>
   );
 }

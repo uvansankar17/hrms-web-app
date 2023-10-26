@@ -5,6 +5,7 @@ import { FaEdit} from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
 import { Modal } from 'react-bootstrap'
 import Header from '../Header'
+import DeleteModel from '../DeleteModel'
 
 const Designation = () => {
     const [addShow, setAddShow] = useState(false);
@@ -238,23 +239,7 @@ const Designation = () => {
 
       {/* Delete Model */}
 
-      <Modal show={deleteShow} onHide={deleteHandleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Delete Designation</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            Confirm to Delete this Designation..?
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={deleteHandleClose}>
-            Yes
-          </Button>
-          <Button variant="secondary" onClick={deleteHandleClose}>
-            No
-          </Button>
-        </Modal.Footer>
-      </Modal>
-
+      <DeleteModel DELETESTATE={deleteShow} ONCLICK={deleteHandleClose} DESCRIPTION="Designation" DELETETITLE="Designation"/>
 
    </>
   )

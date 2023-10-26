@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Button, Container, Modal, Row } from 'react-bootstrap'
+import { Button, Container, Row } from 'react-bootstrap'
 import { FaEdit,} from "react-icons/fa";
 import BasicTable from './Table/BasicTable'
 import { Link, useNavigate } from 'react-router-dom';
 import PROJECT_DATA from './Table/PROJECT_DATA.json'
 import { MdDelete } from 'react-icons/md';
 import Header from '../Header';
+import DeleteModel from '../DeleteModel';
 
 
 const Projects = () => {
@@ -75,22 +76,7 @@ const Projects = () => {
     <BasicTable COLUMNS={COLUMNS} MOCK_DATA={PROJECT_DATA} />
     </Row>
   </Container>
-  <Modal show={deleteShow} onHide={deleteHandleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Project</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            Confirm to Delete this Project..?
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={deleteHandleClose}>
-            Yes
-          </Button>
-          <Button variant="secondary" onClick={deleteHandleClose}>
-            No
-          </Button>
-        </Modal.Footer>
-      </Modal>
+  <DeleteModel DELETESTATE={deleteShow} ONCLICK={deleteHandleClose} DESCRIPTION="Project" DELETETITLE="Project"/>
   </>
   
   )
