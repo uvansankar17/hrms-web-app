@@ -3,6 +3,7 @@ import React from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import {EmployeeShema} from './Validations/EmployeeFormValidate';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 const EmployeeAddForm = () => {
     const navigate = useNavigate();
@@ -48,14 +49,18 @@ const EmployeeAddForm = () => {
           
           <Form >
           <Row className='d-flex flex-row justify-content-between align-items-center'>
-              <Col className='d-flex justify-content-start'><h4>Add Employee Details</h4></Col>
+              <Col className='d-flex justify-content-start align-items-center'><AiOutlineArrowLeft size={25} className='m-1'/><h4>Add Employee Details</h4></Col>
               <Col className='d-sm-none d-none d-md-none d-lg-flex d-xxl-flex d-xl-flex flex-row justify-content-end align-items-center'>
               <Button className='m-1' variant='secondary' onClick={handleCancel}>Cancel</Button>
               <Button className='m-1' type='submit' disabled={isSubmitting} onClick={handleSubmit}>Save</Button>
               </Col>
           </Row>
           <Row className='d-flex flex-wrap flex-lg-row flex-xxl-row flex-xl-row flex-column flex-md-column flex-sm-column '>
-            <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
+          <Col className='m-1 p-4 d-flex  flex-wrap flex-column shadow rounded'>
+            <Col>
+            <h6>Registration Information</h6>
+            </Col>
+            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group className='' >
               
               <Form.Label>First Name</Form.Label>
@@ -63,7 +68,7 @@ const EmployeeAddForm = () => {
               {touched.firstName && errors.firstName ?<p className='text-danger'>{errors.firstName}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
+            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group className='' >
               
               <Form.Label>Last Name</Form.Label>
@@ -71,7 +76,7 @@ const EmployeeAddForm = () => {
               {touched.lastName && errors.lastName ?<p className='text-danger'>{errors.lastName}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
+            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group className='' >
               
               <Form.Label>User Name</Form.Label>
@@ -79,7 +84,7 @@ const EmployeeAddForm = () => {
               {touched.userName && errors.userName ?<p className='text-danger'>{errors.userName}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
+            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group className='' >
               
               <Form.Label>Email</Form.Label>
@@ -87,7 +92,7 @@ const EmployeeAddForm = () => {
               {touched.email && errors.email ?<p className='text-danger'>{errors.email}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
+            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group className='' >
               
               <Form.Label>password</Form.Label>
@@ -95,7 +100,7 @@ const EmployeeAddForm = () => {
               {touched.password && errors.password ?<p className='text-danger'>{errors.password}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
+            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group className='' >
               
               <Form.Label>Confirm Password</Form.Label>
@@ -103,7 +108,12 @@ const EmployeeAddForm = () => {
               {touched.confirmPassword && errors.confirmPassword ?<p className='text-danger'>{errors.confirmPassword}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
+            </Col>
+            <Col className='m-1 p-4 d-flex flex-wrap flex-column shadow rounded '>
+              <Col>
+              <h6>Employee Information</h6>
+              </Col>
+            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group className='' >
               
               <Form.Label>Employee ID</Form.Label>
@@ -112,14 +122,14 @@ const EmployeeAddForm = () => {
             </Form.Group>
             </Col>
             
-            <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
+            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group>
               <Form.Label>Joining Date</Form.Label>
               <Form.Control name='joiningDate' type='date' className={`form-control ${touched.joiningDate && errors.joiningDate ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}></Form.Control>
               {touched.joiningDate && errors.joiningDate ?<p className='text-danger'>{errors.joiningDate}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
+            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group className='' >
               
               <Form.Label>Mobile No.*</Form.Label>
@@ -127,7 +137,7 @@ const EmployeeAddForm = () => {
               {touched.mobile && errors.mobile ?<p className='text-danger'>{errors.mobile}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
+            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group>
               <Form.Label>Company</Form.Label>
               <Form.Select name='company' className={`form-control ${touched.company && errors.company ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}>
@@ -139,7 +149,7 @@ const EmployeeAddForm = () => {
               {touched.company && errors.company ?<p className='text-danger'>{errors.company}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
+            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group>
               <Form.Label>Department</Form.Label>
               <Form.Select name='department' className={`form-control ${touched.department && errors.department ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}>
@@ -151,7 +161,7 @@ const EmployeeAddForm = () => {
               {touched.department && errors.department ?<p className='text-danger'>{errors.department}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="5" xxl="5" xl="5" md="12" sm="12">
+            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
             <Form.Group>
               <Form.Label>Designation</Form.Label>
               <Form.Select name='designation' className={`form-control ${touched.designation && errors.designation ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur}>
@@ -165,6 +175,7 @@ const EmployeeAddForm = () => {
             </Col>
             
             
+          </Col>
           </Row>
           <Row className='d-sm-flex d-flex d-md-flex d-lg-none d-xxl-none d-xl-none flex-row justify-content-between align-items-center'>
           <Col className='d-flex justify-content-start align-items-center'>
