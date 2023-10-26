@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Button, Col, Container, Modal, Row } from "react-bootstrap";
+import { Button, Container, Modal, Row } from "react-bootstrap";
 import EMPLOYEES_DATA from './Table/EMPLOYEES_DATA.json';
-import { FaEdit, FaPlus } from "react-icons/fa";
+import { FaEdit} from "react-icons/fa";
 import { MdDelete } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
 import './Css/Employee.css';
 import BasicTable from './Table/BasicTable';
+import Header from '../Header';
 
 const Employee = () => {
   const navigate = useNavigate();
@@ -64,29 +65,8 @@ const Employee = () => {
   return (
     <div>
       <Container fluid className="">
-        <Row className="d-flex flex-row justify-content-between align-items-center mt-2 mb-2">
-          <Col className="d-flex flex-column flex-wrap-wrap align-content-center">
-            <h5>All Employees</h5>
-          </Col>
-          <Col className="d-flex flex-row flex-wrap-wrap justify-content-end align-items-center">
-            <Button
-              variant="success"
-              className="d-lg-none d-xxl-none d-flex d-sm-flex d-md-flex rounded"
-              size="sm"
-              onClick={handleShow}
-            >
-              <FaPlus className="m-2" />
-            </Button>
-            <Button
-              variant="success"
-              className="d-lg-block d-xxl-block d-none d-sm-none rounded"
-              size="sm"
-              onClick={handleShow}
-            >
-              <FaPlus className="m-2" />
-              Add Employee
-            </Button>
-          </Col>
+        <Row>
+          <Header ONCLICK={handleShow} HEADING="All Employees" BUTTON_NAME="Add Employee"/>
         </Row>
         <Row className=''>
           <BasicTable COLUMNS={COLUMNS} MOCK_DATA={EMPLOYEES_DATA} />

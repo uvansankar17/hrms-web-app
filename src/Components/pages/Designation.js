@@ -1,9 +1,10 @@
 import { Button, Form } from 'react-bootstrap'
 import React, { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { FaEdit, FaPlus } from 'react-icons/fa'
+import { FaEdit} from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
 import { Modal } from 'react-bootstrap'
+import Header from '../Header'
 
 const Designation = () => {
     const [addShow, setAddShow] = useState(false);
@@ -31,11 +32,8 @@ const Designation = () => {
   return (
    <>
     <Container fluid className='overflowX-hidden'>
-        <Row className='d-flex flex-row mt-3 mb-4'>
-            <Col className='fs-sm-6 md-6 fs-lg-4 fs-xxl-4 fs-xl-4' style={{fontWeight:"bolder", fontSize:"16px"}}>Designation List</Col>
-        
-            <Col className='d-flex justify-content-end align-items-center ' ><Button onClick={addHandleShow} className='' style={{ fontSize: window.innerWidth < 768 ? '12px' : '16px'}} ><FaPlus/> Designation</Button></Col>
-           
+        <Row>
+        <Header ONCLICK={addHandleShow} HEADING="Designation List" BUTTON_NAME="Designation"/>
         </Row>
        
            
