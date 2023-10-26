@@ -96,7 +96,7 @@ const AdminDashboard = () => {
       >
         <Row className="d-flex flex-row mt-3">
           <Col>
-            <h4>Welcome Admin!</h4>
+            <h4>Welcome John!</h4>
             <p>Dashboard</p>
           </Col>
         </Row>
