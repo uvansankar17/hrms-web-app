@@ -21,7 +21,7 @@ const EmployeeAddForm = () => {
     const [designation,setDesignation]=useState('');
     const [employeeData,setEmployeeData]=useState({});
     const handleCancel = () =>{
-      navigate(-1)
+      navigate("/employee")
     }
     
     
@@ -104,11 +104,11 @@ const EmployeeAddForm = () => {
               </Col>
           </Row>
           <Row className='d-flex flex-wrap flex-lg-row flex-xxl-row flex-xl-row flex-column flex-md-column flex-sm-column '>
-          <Col className='m-1 p-4 d-flex  flex-wrap flex-column shadow rounded'>
+          <Col className='m-1 p-4 d-flex w-100 h-100  flex-wrap flex-column shadow rounded'>
             <Col>
-            <h6>Registration Information</h6>
+            <h6 className='fw-bold'>Registration Information</h6>
             </Col>
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
+            <Col className='m-2'>
             <Form.Group className='' >
               
               <Form.Label>First Name*</Form.Label>
@@ -116,7 +116,7 @@ const EmployeeAddForm = () => {
               {touched.firstName && errors.firstName ?<p className='text-danger'>{errors.firstName}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
+            <Col className='m-2'>
             <Form.Group className='' >
               
               <Form.Label>Last Name*</Form.Label>
@@ -124,7 +124,7 @@ const EmployeeAddForm = () => {
               {touched.lastName && errors.lastName ?<p className='text-danger'>{errors.lastName}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
+            <Col className='m-2' >
             <Form.Group className='' >
               
               <Form.Label>User Name*</Form.Label>
@@ -132,8 +132,15 @@ const EmployeeAddForm = () => {
               {touched.userName && errors.userName ?<p className='text-danger'>{errors.userName}</p> : ""}
             </Form.Group>
             </Col>
-            
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
+            <Col className='m-2'>
+            <Form.Group className='' >
+              
+              <Form.Label>Mobile No.*</Form.Label>
+              <Form.Control name='mobile' type='number' className={`form-control ${touched.mobile && errors.mobile ? "is-invalid" : ""}`} onChange={(e) => {setMobile(e.target.value);handleChange(e); }} onBlur={handleBlur}></Form.Control>
+              {touched.mobile && errors.mobile ?<p className='text-danger'>{errors.mobile}</p> : ""}
+            </Form.Group>
+            </Col>
+            <Col className='m-2'>
             <Form.Group className='' >
               
               <Form.Label>Email</Form.Label>
@@ -141,7 +148,7 @@ const EmployeeAddForm = () => {
               {touched.email && errors.email ?<p className='text-danger'>{errors.email}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
+            <Col className='m-2'>
             <Form.Group className='' >
               
               <Form.Label>password</Form.Label>
@@ -149,7 +156,7 @@ const EmployeeAddForm = () => {
               {touched.password && errors.password ?<p className='text-danger'>{errors.password}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
+            <Col className='m-2' >
             <Form.Group className='' >
               
               <Form.Label>Confirm Password</Form.Label>
@@ -158,11 +165,11 @@ const EmployeeAddForm = () => {
             </Form.Group>
             </Col>
             </Col>
-            <Col className='m-1 p-4 d-flex  flex-wrap flex-column shadow rounded '>
+            <Col className='m-1 p-4 d-flex w-100 h-100  flex-wrap flex-column shadow rounded '>
             <Col>
-              <h6>Employee Information</h6>
+              <h6 className='fw-bold'>Employee Information</h6>
               </Col>
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
+            <Col className='m-2'>
             <Form.Group className='' >
               <Form.Label>Employee ID</Form.Label>
               <Form.Control name='employeeId' className={`form-control ${touched.employeeId && errors.employeeId ? "is-invalid" : ""}`} onChange={(e) => {setEmployeeId(e.target.value);handleChange(e); }} onBlur={handleBlur}></Form.Control>
@@ -170,22 +177,15 @@ const EmployeeAddForm = () => {
             </Form.Group>
             </Col>
             
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
+            <Col className='m-2'>
             <Form.Group>
               <Form.Label>Joining Date</Form.Label>
               <Form.Control name='joiningDate' type='date' className={`form-control ${touched.joiningDate && errors.joiningDate ? "is-invalid" : ""}`} onChange={(e) => {setJoiningDate(e.target.value);handleChange(e); }} onBlur={handleBlur}></Form.Control>
               {touched.joiningDate && errors.joiningDate ?<p className='text-danger'>{errors.joiningDate}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
-            <Form.Group className='' >
-              
-              <Form.Label>Mobile No.*</Form.Label>
-              <Form.Control name='mobile' type='number' className={`form-control ${touched.mobile && errors.mobile ? "is-invalid" : ""}`} onChange={(e) => {setMobile(e.target.value);handleChange(e); }} onBlur={handleBlur}></Form.Control>
-              {touched.mobile && errors.mobile ?<p className='text-danger'>{errors.mobile}</p> : ""}
-            </Form.Group>
-            </Col>
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
+            
+            <Col className='m-2'>
             <Form.Group>
               <Form.Label>Company</Form.Label>
               <Form.Select name='company' className={`form-control ${touched.company && errors.company ? "is-invalid" : ""}`} onChange={(e) => {setCompany(e.target.value);handleChange(e); }} onBlur={handleBlur}>
@@ -197,7 +197,7 @@ const EmployeeAddForm = () => {
               {touched.company && errors.company ?<p className='text-danger'>{errors.company}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
+            <Col className='m-2'>
             <Form.Group>
               <Form.Label>Department</Form.Label>
               <Form.Select name='department' className={`form-control ${touched.department && errors.department ? "is-invalid" : ""}`} onChange={(e) => {setDepartment(e.target.value);handleChange(e); }} onBlur={handleBlur}>
@@ -209,7 +209,7 @@ const EmployeeAddForm = () => {
               {touched.department && errors.department ?<p className='text-danger'>{errors.department}</p> : ""}
             </Form.Group>
             </Col>
-            <Col className='m-2' lg="12" xxl="12" xl="12" md="12" sm="12">
+            <Col className='m-2'>
             <Form.Group>
               <Form.Label>Designation</Form.Label>
               <Form.Select name='designation' className={`form-control ${touched.designation && errors.designation ? "is-invalid" : ""}`} onChange={(e) => {setDesignation(e.target.value);handleChange(e); }} onBlur={handleBlur}>
