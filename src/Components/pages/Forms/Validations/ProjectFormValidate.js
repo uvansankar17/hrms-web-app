@@ -10,15 +10,6 @@ export const projectShema = Yup.object().shape({
     teamLeader:Yup.string().min(2,"Add  Atleast one Team Leader").required("Team Leader Required..!"),
     teamMember:Yup.string().min(2,"Add  Atleast one Team Member").required("Team Member Required..!"),
     description:Yup.string().min(10,"Min one line Description For this Project").required("Description Required..!"),
-    projectFile:Yup.mixed().required("File is required").test("fileSize", "File size is too large", (value) => {
-      if (!value) return true; // If no file is provided, we consider it valid.
-      return value.size <= 5242880; // 5 MB (You can adjust this limit as needed)
-    })
-    .test("fileType", "Invalid file type", (value) => {
-      if (!value) return true; // If no file is provided, we consider it valid.
-      return (
-        ['image/jpeg', 'image/png', 'application/pdf'].includes(value.type) // Specify valid MIME types
-      );
-    }),
+    projectFile:Yup.mixed().required("File is required")
 
 })
