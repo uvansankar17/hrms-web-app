@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
 import {useTable,useSortBy,usePagination,useGlobalFilter} from 'react-table'
-import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
+import { FaSort } from 'react-icons/fa'
 
 const BasicTable = (props) => {
     const columns = useMemo(() => props.COLUMNS ,[props.COLUMNS]);
@@ -50,9 +50,8 @@ const BasicTable = (props) => {
                     headerGroups.headers.map((column)=>(
                       <th  {...column.getHeaderProps(column.getSortByToggleProps())}>
                                   {column.render('Header')}
- 
-                               {column.isSorted ? (column.isSortedDesc ? <AiOutlineArrowDown className='m-1'/> : <AiOutlineArrowUp className='m-1'/>) : ''}
-</th>
+                          <FaSort className='mx-2'/>
+                       </th>
                     ))
                   }
               </tr>
