@@ -100,167 +100,62 @@ const AdminDashboard = () => {
             <p>Dashboard</p>
           </Col>
         </Row>
-        <Row
-          className="d-flex flex-sm-column flex-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-between flex-wrap flex-md-row"
-          style={{ marginRight: "6px" }}
-        >
-          <Col
-            className="rounded  d-flex flex-row justify-content-between align-items-center text-center flex-wrap"
-            style={{
-              margin: "10px",
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Row
-              className=""
-              style={{
-                backgroundColor: "#ccfeff",
-                margin: "10px",
-                padding: "10px",
-                borderRadius: "200px",
-              }}
-            >
-              <GoProject
-                className="p-0"
-                size={30}
-                style={{ margin: "0px", color: "#00d4ff" }}
-              />
+        <Row className="d-flex mr-6 flex-sm-column flex-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-between flex-wrap flex-md-row">
+          <Col className="rounded boxShadow m-10 d-flex flex-row justify-content-between align-items-center text-center flex-wrap">
+            <Row className="p-10 m-10 bg-ccfeff br-200">
+              <GoProject className="p-0 bg-00d4ff mainColor" size={30} />
             </Row>
             <Row className="text-end pt-2">
-              <h5
-                className=""
-                style={{ fontSize: "25px", fontWeight: "bolder" }}
-              >
-                92
-              </h5>
-              <p style={{ fontSize: "14px", fontWeight: "bolder" }}>Projects</p>
+              <h5 className="fs-4 fw-bolder">92</h5>
+              <p className="fs-14 fw-bolder">Projects</p>
             </Row>
           </Col>
-          <Col
-            className="rounded  d-flex flex-row justify-content-between align-items-center text-center flex-wrap"
-            style={{
-              margin: "10px",
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Row
-              className=""
-              style={{
-                backgroundColor: "#ccfeff",
-                margin: "10px",
-                padding: "10px",
-                borderRadius: "200px",
-              }}
-            >
+          <Col className="rounded m-10 boxShadow d-flex flex-row justify-content-between align-items-center text-center flex-wrap">
+            <Row className="p-10 m-10 bg-ccfeff br-200">
               <AiOutlineUsergroupAdd
                 className="p-0"
                 size={30}
-                style={{ margin: "0px", color: "#00d4ff" }}
+                color="#00d4ff"
               />
             </Row>
             <Row className="text-end pt-2">
-              <h5
-                className=""
-                style={{ fontSize: "25px", fontWeight: "bolder" }}
-              >
-                132
-              </h5>
-              <p style={{ fontSize: "14px", fontWeight: "bolder" }}>Clients</p>
+              <h5 className="fs-4 fw-bolder">132</h5>
+              <p className="fs-14 fw-bolder">Clients</p>
             </Row>
           </Col>
-          <Col
-            className="rounded  d-flex flex-row justify-content-between align-items-center text-center flex-wrap"
-            style={{
-              margin: "10px",
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Row
-              className=""
-              style={{
-                backgroundColor: "#ccfeff",
-                margin: "10px",
-                padding: "10px",
-                borderRadius: "200px",
-              }}
-            >
-              <BiTask
-                className="p-0"
-                size={30}
-                style={{ margin: "0px", color: "#00d4ff" }}
-              />
+          <Col className="rounded m-10 boxShadow d-flex flex-row justify-content-between align-items-center text-center flex-wrap">
+            <Row className="p-10 m-10 bg-ccfeff br-200">
+              <BiTask className="p-0" size={30} color="#00d4ff" />
             </Row>
             <Row className="text-end pt-2">
-              <h5
-                className=""
-                style={{ fontSize: "25px", fontWeight: "bolder" }}
-              >
-                32
-              </h5>
-              <p style={{ fontSize: "14px", fontWeight: "bolder" }}>Tasks</p>
+              <h5 className="fs-4 fw-bolder">32</h5>
+              <p className="fs-14 fw-bolder">Tasks</p>
             </Row>
           </Col>
-          <Col
-            className="rounded  d-flex flex-row justify-content-between align-items-center text-center flex-wrap"
-            style={{
-              margin: "10px",
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Row
-              className=""
-              style={{
-                backgroundColor: "#ccfeff",
-                margin: "10px",
-                padding: "10px",
-                borderRadius: "200px",
-              }}
-            >
-              <AiOutlineUser
-                className="p-0"
-                size={30}
-                style={{ margin: "0px", color: "#00d4ff" }}
-              />
+          <Col className="rounded m-10 boxShadow d-flex flex-row justify-content-between align-items-center text-center flex-wrap">
+            <Row className="p-10 m-10 bg-ccfeff br-200">
+              <AiOutlineUser className="p-0" size={30} color="#00d4ff" />
             </Row>
             <Row className="text-end pt-2">
-              <h5
-                className=""
-                style={{ fontSize: "25px", fontWeight: "bolder" }}
-              >
-                30
-              </h5>
-              <p style={{ fontSize: "14px", fontWeight: "bolder" }}>
-                Employees
-              </p>
+              <h5 className="fs-4 fw-bolder">30</h5>
+              <p className="fs-14 fw-bolder">Employees</p>
             </Row>
           </Col>
         </Row>
-        <Row
-          className="d-flex flex-sm-column mt-6 flex-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-between flex-wrap flex-md-row align-items-center overflow-hidden"
-          style={{ }}
-        >
-          <Col className="rounded  ">
+        <Row className="d-flex flex-sm-column mt-6 flex-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-between flex-wrap flex-md-row align-items-center overflow-hidden">
+          <Col className="rounded">
             <Bar
               options={optionsBar}
               data={dataBar}
-              style={{
-                boxShadow:
-                  "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-              }}
+              className="boxShadow rounded"
             />
           </Col>
-          <Col
-            className="rounded "
-            style={{
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Line options={optionsLine} data={dataLine} />
+          <Col className="rounded ">
+            <Line
+              options={optionsLine}
+              data={dataLine}
+              className="boxShadow rounded"
+            />
           </Col>
         </Row>
       </Container>

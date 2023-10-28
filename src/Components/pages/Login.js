@@ -121,8 +121,7 @@ const Login = ({ setAuthenticated }) => {
                         onBlur={handleBlur}
                       ></Form.Control>
                       <div
-                        className="position-absolute m-2 "
-                        style={{ cursor: "pointer" }}
+                        className="position-absolute m-2 pointer"
                         onClick={showPassword}
                       >
                         {!passwordIcon ? (
@@ -141,11 +140,9 @@ const Login = ({ setAuthenticated }) => {
                 </Form.Group>
 
                 <Button
-                  className="mt-3 text-dark btn btn-outline-dark"
+                  className="mt-3 text-dark btn btn-outline-dark border-none outline-none"
                   style={{
                     backgroundColor: "#00d4ff",
-                    outline: "none",
-                    border: "none",
                   }}
                   type="submit"
                   disabled={isSubmitting}

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import React from "react";
+import { Button, Modal } from "react-bootstrap";
 
 const DeleteModel = (props) => {
   return (
@@ -8,9 +8,7 @@ const DeleteModel = (props) => {
         <Modal.Header closeButton>
           <Modal.Title>{props.DELETETITLE}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-            Confirm to Delete this {props.DESCRIPTION}..?
-        </Modal.Body>
+        <Modal.Body>Confirm to Delete this {props.DESCRIPTION}..?</Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={props.ONCLICK}>
             Yes
@@ -21,7 +19,7 @@ const DeleteModel = (props) => {
         </Modal.Footer>
       </Modal>
     </div>
-  )
-}
+  );
+};
 
-export default DeleteModel
+export default DeleteModel;

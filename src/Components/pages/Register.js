@@ -129,11 +129,9 @@ const Register = () => {
                 </Form.Group>
 
                 <Button
-                  className="mt-3 text-dark btn btn-outline-dark"
+                  className="mt-3 text-dark btn btn-outline-dark border-none outline-none"
                   style={{
                     backgroundColor: "#00d4ff",
-                    outline: "none",
-                    border: "none",
                   }}
                   type="submit"
                   disabled={isSubmitting}
@@ -149,8 +147,7 @@ const Register = () => {
                   <p className="text-center">
                     Already have an account?
                     <Link
-                      className="m-1"
-                      style={{ textDecoration: "none" }}
+                      className="m-1 textDecoration-none"
                       to={"/"}
                     >
                       Login

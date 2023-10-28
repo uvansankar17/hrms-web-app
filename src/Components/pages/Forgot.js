@@ -80,11 +80,9 @@ const Forgot = () => {
                 </Form.Group>
 
                 <Button
-                  className="mt-3 text-dark btn btn-outline-dark"
+                  className="mt-3 text-dark btn btn-outline-dark mainColor border-none outline-none"
                   style={{
                     backgroundColor: "#00d4ff",
-                    outline: "none",
-                    border: "none",
                   }}
                   type="submit"
                   disabled={isSubmitting}

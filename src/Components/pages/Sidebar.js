@@ -23,50 +23,50 @@ const Sidebar = () => {
     <div className='rounded position-fixed 'style={{marginRight:"5px"}} >
     <Container fluid className='d-sm-none sidebar  d-md-none d-lg-block d-xxl-block d-xl-block  justify-content-start align-items-start d-none ' style={{backgroundColor:"#313947",height:"92vh",width:"100%",overflowY:"auto",marginLeft:"-12px"}} >
         <Row className='p-2 d-flex align-items-center' >
-          <Link to={"/"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-          <h6 className='d-flex align-items-center ' ><MdOutlineAdminPanelSettings  size={20} style={{marginRight:"10px",}}/>Admin Dashboard</h6>
+          <Link to={"/"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer' onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+          <h6 className='d-flex align-items-center ' ><MdOutlineAdminPanelSettings  size={20} className='mr-10'/>Admin Dashboard</h6>
           </Link>
         </Row>
         <Row className='p-2 d-flex align-items-center'>
-          <Link to={"/employeeDashboard"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-          <h6  className='d-flex align-items-center' style={{fontSize:"15px",}}><BiSolidUserDetail size={20} style={{marginRight:"10px"}}/> Employee Dashboard</h6>
+          <Link to={"/employeeDashboard"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+          <h6  className='d-flex align-items-center fs-15' ><BiSolidUserDetail size={20} className='mr-10'/> Employee Dashboard</h6>
 
           </Link>
         </Row>
         <Row className='p-2 d-flex align-items-center'>
-        <Link to={"/employee"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><BiSolidUser size={20} style={{marginRight:"10px",}}/>All Employees</h6>
+        <Link to={"/employee"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center fs-15' ><BiSolidUser size={20} className='mr-10'/>All Employees</h6>
 
         </Link>
         </Row>
         <Row className='p-2 d-flex align-items-center'>
-          <Link to={"/attendance"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-          <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}> <BiNotepad  size={20} style={{marginRight:"10px",}}/>Attendance</h6>
+          <Link to={"/attendance"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+          <h6 className='d-flex align-items-center fs-15' > <BiNotepad  size={20} className='mr-10'/>Attendance</h6>
 
           </Link>
         </Row>
         <Row className='p-2 d-flex align-items-center'>
-        <Link to={"/timesheet"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><SiGooglesheets size={20} style={{marginRight:"10px",}}/>Time Sheet</h6>
+        <Link to={"/timesheet"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center fs-15' ><SiGooglesheets size={20} className='mr-10'/>Time Sheet</h6>
 
         </Link>
         </Row>
 
         <Row className='p-2 d-flex align-items-center'> 
-       <Link to={"/leave"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-       <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><SlCalender size={20} style={{marginRight:"10px",}}/>Leave</h6>
+       <Link to={"/leave"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'   onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+       <h6 className='d-flex align-items-center fs-15' ><SlCalender size={20} className='mr-10'/>Leave</h6>
 
        </Link>
         </Row>
         <Row className='p-2 d-flex align-items-center'>
-       <Link to={"/designation"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-       <h6 className='d-flex align-items-center' style={{fontSize:"15px",}} ><FaUsersGear size={20} style={{marginRight:"10px",}}/>Designation</h6>
+       <Link to={"/designation"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'   onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+       <h6 className='d-flex align-items-center fs-15'  ><FaUsersGear size={20} className='mr-10'/>Designation</h6>
 
        </Link>
         </Row>
         <Row className='p-2 d-flex align-items-center'>
-       <Link to={"/training"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-       <h6 className='d-flex align-items-center' style={{fontSize:"15px",}} ><PiStudentDuotone size={20} style={{marginRight:"10px",}}/>Training</h6>
+       <Link to={"/training"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+       <h6 className='d-flex align-items-center fs-15'  ><PiStudentDuotone size={20} className='mr-10'/>Training</h6>
 
        </Link>
         </Row>
@@ -75,18 +75,18 @@ const Sidebar = () => {
         <Accordion.Header className='' style={{ backgroundColor: '#313947',color:"white", }} ><BiSolidPieChartAlt2 size={20} style={{marginRight:"10px",}}/>Report  </Accordion.Header>
         <Accordion.Body>
         <Row >
-        <Link to={"/userReport"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}>User (Report)</h6>
+        <Link to={"/userReport"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center fs-15' >User (Report)</h6>
 
         </Link>
         </Row>
         <Row >
-            <Link to={"/attendanceReport"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-              <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}>Attendance (Report)</h6></Link>
+            <Link to={"/attendanceReport"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+              <h6 className='d-flex align-items-center fs-15' >Attendance (Report)</h6></Link>
         </Row>
         <Row >
-<Link to={"/leaveReport"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-<h6 className='d-flex align-items-center' style={{fontSize:"15px",}}>Leave (Report)</h6>
+<Link to={"/leaveReport"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'   onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+<h6 className='d-flex align-items-center fs-15' >Leave (Report)</h6>
 
 </Link>
         </Row>
@@ -94,26 +94,26 @@ const Sidebar = () => {
         </Accordion.Item>
         </Accordion>
         <Row className='p-2 d-flex align-items-center'>
-        <Link to={"/project"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><AiOutlineProject size={20} style={{marginRight:"10px",}}/>Projects</h6>
+        <Link to={"/project"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer' onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center fs-15' ><AiOutlineProject size={20} className='mr-10'/>Projects</h6>
 
         </Link>
         </Row>
         <Row className='p-2 d-flex align-items-center'>
-        <Link to={"/payslip"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><LiaMoneyCheckAltSolid size={20} style={{marginRight:"10px",}}/>PaySlip</h6>
+        <Link to={"/payslip"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'   onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center fs-15' ><LiaMoneyCheckAltSolid size={20} className='mr-10'/>PaySlip</h6>
 
         </Link>
         </Row>
         <Row className='p-2 d-flex align-items-center'>
-        <Link to={"/ticket"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-        <h6 className='d-flex align-items-center'  style={{fontSize:"15px",}}><BsTicketPerforated size={20} style={{marginRight:"10px",}}/>Tickets</h6>
+        <Link to={"/ticket"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'   onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center fs-15'  ><BsTicketPerforated size={20} className='mr-10'/>Tickets</h6>
 
         </Link>
         </Row>
         <Row className='p-2 d-flex align-items-center'>
-        <Link to={"/client"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}><GiShakingHands size={20} style={{marginRight:"10px",}}/>Clients</h6>
+        <Link to={"/client"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'   onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center fs-15'><GiShakingHands size={20} className='mr-10'/>Clients</h6>
 
         </Link>
         </Row>
@@ -122,8 +122,8 @@ const Sidebar = () => {
         <Accordion.Header className='' style={{ backgroundColor: '#313947',color:"white", }} ><IoSettingsOutline size={20} style={{marginRight:"10px",}}/>Settings</Accordion.Header>
         <Accordion.Body>
         <Row >
-        <Link to={"/status"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-        <h6 className='d-flex align-items-center' style={{fontSize:"15px",}}>Status</h6>
+        <Link to={"/status"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center fs-15' >Status</h6>
 
         </Link>
         </Row>
@@ -133,8 +133,8 @@ const Sidebar = () => {
         </Accordion.Item>
         </Accordion>
         <Row className='p-2 d-flex align-items-center'>
-        <Link to={"/promotion"} className='mt-2 mb-2 p-2 d-flex align-items-center' style={{textDecoration: 'none',color:"white",cursor:"pointer"}}  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
-        <h6 className='d-flex align-items-center'  style={{fontSize:"15px",}}><TbSpeakerphone size={20} style={{marginRight:"10px",}}/>Promotion</h6>
+        <Link to={"/promotion"} className='mt-2 mb-2 p-2 d-flex align-items-center textDecoration-none color-white pointer'  onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = "#00d4ff";e.currentTarget.style.color = "black"}}onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent";e.currentTarget.style.color = "white" }}>
+        <h6 className='d-flex align-items-center fs-15'  ><TbSpeakerphone size={20} className='mr-10'/>Promotion</h6>
 
         </Link>
         </Row>

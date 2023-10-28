@@ -3,7 +3,6 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa";
 
-
 const EmployeeDashboard = () => {
   return (
     <Container fluid className="">
@@ -15,13 +14,12 @@ const EmployeeDashboard = () => {
           </p>
         </Col>
         <Col className="d-flex  flex-row flex-wrap-wrap justify-content-end align-items-center">
-        <Button
+          <Button
             variant="success"
             className="d-lg-none d-xxl-none d-flex d-sm-flex d-md-flex rounded"
             size="sm"
           >
             <FaPlus className="m-2" />
-            
           </Button>
           <Button
             variant="success"

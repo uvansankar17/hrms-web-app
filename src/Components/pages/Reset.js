@@ -139,12 +139,9 @@ const Reset = () => {
                   </Form.Group>
 
                   <Button
-                    className="mt-3 text-dark btn btn-outline-dark"
+                    className="mt-3 text-dark btn btn-outline-dark outline-none border-none textDecoration-none"
                     style={{
                       backgroundColor: "#00d4ff",
-                      outline: "none",
-                      border: "none",
-                      textDecoration: "none",
                     }}
                     type="submit"
                     disabled={isSubmitting}
