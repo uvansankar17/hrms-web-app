@@ -1,6 +1,6 @@
 {
-  "short_name": "HRMS APP",
-  "name": "HRMS-WEB-APP",
+  "short_name": "HRMS-Web-App",
+  "name": "HRMS-Web-App",
   "icons": [
     {
       "src": "favicon.ico",
