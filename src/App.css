@@ -1,3 +1,16 @@
 .pointer{
     cursor: pointer;
 }
+
+.table th {
+    background-color: #333;
+    color: white;
+    width: '100%';
+    text-align: center;
+    text-wrap: nowrap;
+    padding: 12px;
+  }
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
