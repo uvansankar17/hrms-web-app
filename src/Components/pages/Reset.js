@@ -7,21 +7,17 @@ import { Formik } from "formik";
 import { LogAndRegSchema } from "./Forms/Validations/LoginValidation";
 
 const Reset = () => {
-  const [otp, setOpt] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const history = useNavigate();
   const handleReset = () => {
-    console.log("Email : " + otp);
     console.log("Password : " + password);
     console.log("Confirm Password : " + repeatPassword);
     history("/login");
-    setOpt("");
     setPassword("");
     setRepeatPassword("");
   };
   const initialValues = {
-    otp: "",
     password: "",
     confirmPassword: "",
   };
@@ -51,6 +47,7 @@ const Reset = () => {
             <Formik
               initialValues={initialValues}
               validationSchema={LogAndRegSchema}
+              onSubmit={handleReset}
             >
               {({
                 values,
@@ -62,29 +59,7 @@ const Reset = () => {
                 isSubmitting,
               }) => (
                 <Form className="d-flex flex-column justify-content-center">
-                  <Form.Group>
-                    <Form.Label htmlFor="code">Code*</Form.Label>
-                    <Form.Control
-                      type="number"
-                      size="md"
-                      placeholder="Enter 4 digit code"
-                      id="code"
-                      name="otp"
-                      className={`form-control ${
-                        touched.otp && errors.otp ? "is-invalid" : ""
-                      }`}
-                      onChange={(e) => {
-                        setOpt(e.target.value);
-                        handleChange(e);
-                      }}
-                      onBlur={handleBlur}
-                    ></Form.Control>
-                    {touched.otp && errors.otp ? (
-                      <p className="text-danger m-1">{errors.otp}</p>
-                    ) : (
-                      ""
-                    )}
-                  </Form.Group>
+                  
                   <Form.Group>
                     <Form.Label htmlFor="password">Password*</Form.Label>
                     <Form.Control
@@ -146,7 +121,7 @@ const Reset = () => {
                     type="submit"
                     disabled={isSubmitting}
                     onClick={
-                      otp !== "" && password !== "" && repeatPassword !== ""
+                      password !== "" && repeatPassword !== ""
                         ? handleReset
                         : handleSubmit
                     }

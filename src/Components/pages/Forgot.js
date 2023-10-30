@@ -14,7 +14,7 @@ const Forgot = () => {
   const handleForgot = () => {
     console.log("Email : " + email);
 
-    history("/reset");
+    history("/otp");
     setEmail("");
   };
   const initialValues = {

@@ -44,6 +44,7 @@ import AttendanceAddForm from "./Components/pages/Forms/AttendanceAddForm";
 import AttendanceEditForm from "./Components/pages/Forms/AttendanceEditForm";
 import ClientAddForm from "./Components/pages/Forms/ClientAddForm";
 import ClientEditForm from "./Components/pages/Forms/ClientEditForm";
+import Otp from "./Components/pages/Otp";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -68,6 +69,7 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/forgot" element={<Forgot />} />
                 <Route path="/reset" element={<Reset />} />
+                <Route path="/otp" element={<Otp/>} />
 
                 {/* Private Routes */}
                 <Route
@@ -106,6 +108,7 @@ function App() {
                   path="/project"
                   element={authenticated ? <Projects/> : <Navigate to="/login" />}
                 />
+
                 <Route
                   path="/payslip"
                   element={authenticated ? <PaySlip/> : <Navigate to="/login" />}
