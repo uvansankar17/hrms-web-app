@@ -17,7 +17,7 @@ const Tickets = () => {
   const deleteHandleShow = () => {
     setDeleteShow(true);
   };
-  const handleShow = () => navigate("/ticketAddForm");
+  const handleNavigateAddForm = () => navigate("/ticketAddForm");
 
   const COLUMNS = [
     {
@@ -92,7 +92,7 @@ const Tickets = () => {
       <Container fluid className="">
         <Row>
           <Header
-            ONCLICK={handleShow}
+            ONCLICK={handleNavigateAddForm}
             HEADING="Tickets"
             BUTTON_NAME="Add Ticket"
           />

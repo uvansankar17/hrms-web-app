@@ -10,7 +10,7 @@ import DeleteModel from "../DeleteModel";
 
 const Projects = () => {
   const navigate = useNavigate();
-  const handleShow = () => navigate("/projectAddForm");
+  const handleNavigateAddForm = () => navigate("/projectAddForm");
   const [deleteShow, setDeleteShow] = useState(false);
   const deleteHandleClose = () => {
     setDeleteShow(false);
@@ -79,7 +79,7 @@ const Projects = () => {
       <Container fluid className="">
         <Row>
           <Header
-            ONCLICK={handleShow}
+            ONCLICK={handleNavigateAddForm}
             HEADING="Projects"
             BUTTON_NAME="Add Project"
           />

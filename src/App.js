@@ -38,6 +38,12 @@ import EmployeeEditForm from "./Components/pages/Forms/EmployeeEditForm";
 import PaySlip from "./Components/pages/PaySlip";
 import TicketAddForm from "./Components/pages/Forms/TicketAddForm";
 import TicketEditForm from "./Components/pages/Forms/TicketEditForm";
+import LeaveAddForm from "./Components/pages/Forms/LeaveAddForm";
+import LeaveEditForm from "./Components/pages/Forms/LeaveEditForm";
+import AttendanceAddForm from "./Components/pages/Forms/AttendanceAddForm";
+import AttendanceEditForm from "./Components/pages/Forms/AttendanceEditForm";
+import ClientAddForm from "./Components/pages/Forms/ClientAddForm";
+import ClientEditForm from "./Components/pages/Forms/ClientEditForm";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -183,6 +189,30 @@ function App() {
                 <Route
                   path="/ticketEditForm"
                   element={authenticated ? <TicketEditForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/leaveAddForm"
+                  element={authenticated ? <LeaveAddForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/leaveEditForm"
+                  element={authenticated ? <LeaveEditForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/clientAddForm"
+                  element={authenticated ? <ClientAddForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/clientEditForm"
+                  element={authenticated ? <ClientEditForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/attendanceAddForm"
+                  element={authenticated ? <AttendanceAddForm/> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/attendanceEditForm"
+                  element={authenticated ? <AttendanceEditForm/> : <Navigate to="/login" />}
                 />
               </Routes>
             </Col>

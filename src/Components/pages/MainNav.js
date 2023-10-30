@@ -35,7 +35,7 @@ const MainNav = ({ authenticated, setAuthenticated }) => {
   const history = useNavigate();
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleNavigateAddForm = () => setShow(true);
   const handleLogin = () => {
     // Simulate authentication by setting authenticated to false
 
@@ -54,7 +54,7 @@ const MainNav = ({ authenticated, setAuthenticated }) => {
       >
         <Row className="d-flex flex-row flex-wrap-wrap justify-content-around align-items-center p-2">
           <Col className="d-lg-none d-xl-none d-sm-flex">
-            <AiOutlineMenu size={25} onClick={handleShow} className="pointer" />
+            <AiOutlineMenu size={25} onClick={handleNavigateAddForm} className="pointer" />
           </Col>
           <Col
             className='d-lg-flex d-none d-sm-none  flex-row flex-wrap-wrap justify-content-between"align-items-center '

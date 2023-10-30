@@ -10,7 +10,7 @@ import Header from "../Header";
 
 const TimeSheet = () => {
   const naviagte = useNavigate();
-  const handleShow = () => naviagte("/timeSheetAddForm");
+  const handleNavigateAddForm = () => naviagte("/timeSheetAddForm");
   const [deleteShow, setDeleteShow] = useState(false);
   const deleteHandleClose = () => {
     setDeleteShow(false);
@@ -75,7 +75,7 @@ const TimeSheet = () => {
       <Container fluid>
         <Row>
           <Header
-            ONCLICK={handleShow}
+            ONCLICK={handleNavigateAddForm}
             HEADING="Time Sheet"
             BUTTON_NAME="Add Work Time"
           />

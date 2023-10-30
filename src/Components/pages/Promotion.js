@@ -17,7 +17,7 @@ const Promotion = () => {
   const deleteHandleShow = () => {
     setDeleteShow(true);
   };
-  const handleShow = () => navigate("/promotionAddForm");
+  const handleNavigateAddForm = () => navigate("/promotionAddForm");
 
   const COLUMNS = [
     {
@@ -71,7 +71,7 @@ const Promotion = () => {
       <Container fluid className="">
         <Row>
           <Header
-            ONCLICK={handleShow}
+            ONCLICK={handleNavigateAddForm}
             HEADING="Promotion"
             BUTTON_NAME="Add Promotion"
           />

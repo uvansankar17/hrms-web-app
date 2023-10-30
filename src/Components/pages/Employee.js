@@ -11,7 +11,7 @@ import DeleteModel from "../DeleteModel";
 
 const Employee = () => {
   const navigate = useNavigate();
-  const handleShow = () => navigate("/employeeAddForm");
+  const handleNavigateAddForm = () => navigate("/employeeAddForm");
   const [deleteShow, setDeleteShow] = useState(false);
 
   const deleteHandleClose = () => {
@@ -74,7 +74,7 @@ const Employee = () => {
       <Container fluid className="">
         <Row>
           <Header
-            ONCLICK={handleShow}
+            ONCLICK={handleNavigateAddForm}
             HEADING="All Employees"
             BUTTON_NAME="Add Employee"
           />
