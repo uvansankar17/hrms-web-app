@@ -147,7 +147,7 @@ const ProjectEditForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setProjectName(e.target.value);
+                            setProjectName(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -170,7 +170,7 @@ const ProjectEditForm = () => {
                             touched.client && errors.client ? "is-invalid" : ""
                           }`}
                           onChange={(e) => {
-                            setClient(e.target.value);
+                            setClient(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -246,7 +246,7 @@ const ProjectEditForm = () => {
                             touched.rate && errors.rate ? "is-invalid" : ""
                           }`}
                           onChange={(e) => {
-                            setRate(e.target.value);
+                            setRate(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -276,7 +276,7 @@ const ProjectEditForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setTeamLeader(e.target.value);
+                            setTeamLeader(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -300,7 +300,7 @@ const ProjectEditForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setTeamMember(e.target.value);
+                            setTeamMember(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -324,7 +324,7 @@ const ProjectEditForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setPriority(e.target.value);
+                            setPriority(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -353,7 +353,7 @@ const ProjectEditForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setProjecFile(e.target.value);
+                            setProjecFile(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -383,7 +383,7 @@ const ProjectEditForm = () => {
                                 : ""
                             }`}
                             onChange={(e) => {
-                              setDescription(e.target.value);
+                              setDescription(e.target.value.trim());
                               handleChange(e);
                             }}
                             onBlur={handleBlur}

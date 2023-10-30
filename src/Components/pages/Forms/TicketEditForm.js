@@ -140,7 +140,7 @@ const TicketEditForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setTicketId(e.target.value);
+                          setTicketId(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -163,7 +163,7 @@ const TicketEditForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setAssignTo(e.target.value);
+                          setAssignTo(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -194,7 +194,7 @@ const TicketEditForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setTicketFollower(e.target.value);
+                          setTicketFollower(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -225,7 +225,7 @@ const TicketEditForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setPriority(e.target.value);
+                          setPriority(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -283,7 +283,7 @@ const TicketEditForm = () => {
                           touched.project && errors.project ? "is-invalid" : ""
                         }`}
                         onChange={(e) => {
-                          setProject(e.target.value);
+                          setProject(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -312,7 +312,7 @@ const TicketEditForm = () => {
                           touched.client && errors.client ? "is-invalid" : ""
                         }`}
                         onChange={(e) => {
-                          setClient(e.target.value);
+                          setClient(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -341,7 +341,7 @@ const TicketEditForm = () => {
                           touched.status && errors.status ? "is-invalid" : ""
                         }`}
                         onChange={(e) => {
-                          setStatus(e.target.value);
+                          setStatus(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -376,7 +376,7 @@ const TicketEditForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setAttachment(e.target.value);
+                          setAttachment(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -406,7 +406,7 @@ const TicketEditForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setDescription(e.target.value);
+                            setDescription(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}

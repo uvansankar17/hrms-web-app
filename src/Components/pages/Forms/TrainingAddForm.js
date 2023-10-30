@@ -130,7 +130,7 @@ const TrainingAddForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setTrainingType(e.target.value);
+                          setTrainingType(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -160,7 +160,7 @@ const TrainingAddForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setTrainingCost(e.target.value);
+                          setTrainingCost(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -233,7 +233,7 @@ const TrainingAddForm = () => {
                           touched.trainer && errors.trainer ? "is-invalid" : ""
                         }`}
                         onChange={(e) => {
-                          setTrainer(e.target.value);
+                          setTrainer(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -262,7 +262,7 @@ const TrainingAddForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setEmployee(e.target.value);
+                          setEmployee(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -299,7 +299,7 @@ const TrainingAddForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setDescription(e.target.value);
+                            setDescription(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -321,7 +321,7 @@ const TrainingAddForm = () => {
                           touched.status && errors.status ? "is-invalid" : ""
                         }`}
                         onChange={(e) => {
-                          setStatus(e.target.value);
+                          setStatus(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}

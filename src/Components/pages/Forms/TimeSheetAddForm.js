@@ -125,7 +125,7 @@ const TimeSheetAddForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setProjectName(e.target.value);
+                          setProjectName(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -201,7 +201,7 @@ const TimeSheetAddForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setTotalHours(e.target.value);
+                          setTotalHours(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -225,7 +225,7 @@ const TimeSheetAddForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setRemainingHours(e.target.value);
+                          setRemainingHours(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -248,7 +248,7 @@ const TimeSheetAddForm = () => {
                           touched.hours && errors.hours ? "is-invalid" : ""
                         }`}
                         onChange={(e) => {
-                          setHours(e.target.value);
+                          setHours(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -279,7 +279,7 @@ const TimeSheetAddForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setDescription(e.target.value);
+                            setDescription(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}

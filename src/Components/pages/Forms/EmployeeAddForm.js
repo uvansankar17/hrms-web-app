@@ -152,7 +152,7 @@ const EmployeeAddForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setFirstName(e.target.value);
+                            setFirstName(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -175,7 +175,7 @@ const EmployeeAddForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setLastName(e.target.value);
+                            setLastName(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -222,7 +222,7 @@ const EmployeeAddForm = () => {
                             touched.mobile && errors.mobile ? "is-invalid" : ""
                           }`}
                           onChange={(e) => {
-                            setMobile(e.target.value);
+                            setMobile(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -243,7 +243,7 @@ const EmployeeAddForm = () => {
                             touched.email && errors.email ? "is-invalid" : ""
                           }`}
                           onChange={(e) => {
-                            setEmail(e.target.value);
+                            setEmail(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -266,7 +266,7 @@ const EmployeeAddForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setPassword(e.target.value);
+                            setPassword(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -289,7 +289,7 @@ const EmployeeAddForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setConfirmPassword(e.target.value);
+                            setConfirmPassword(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -319,7 +319,7 @@ const EmployeeAddForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setEmployeeId(e.target.value);
+                            setEmployeeId(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -368,7 +368,7 @@ const EmployeeAddForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setCompany(e.target.value);
+                            setCompany(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}
@@ -404,7 +404,7 @@ const EmployeeAddForm = () => {
                               : ""
                           }`}
                           onChange={(e) => {
-                            setDepartment(e.target.value);
+                            setDepartment(e.target.value.trim());
                             handleChange(e);
                           }}
                           onBlur={handleBlur}

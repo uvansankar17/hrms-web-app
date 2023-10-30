@@ -68,7 +68,7 @@ const Register = () => {
                       touched.email && errors.email ? "is-invalid" : ""
                     }`}
                     onChange={(e) => {
-                      setEmail(e.target.value);
+                      setEmail(e.target.value.trim());
                       handleChange(e);
                     }}
                     onBlur={handleBlur}
@@ -90,7 +90,7 @@ const Register = () => {
                       touched.password && errors.password ? "is-invalid" : ""
                     }`}
                     onChange={(e) => {
-                      setPassword(e.target.value);
+                      setPassword(e.target.value.trim());
                       handleChange(e);
                     }}
                     onBlur={handleBlur}
@@ -116,7 +116,7 @@ const Register = () => {
                         : ""
                     }`}
                     onChange={(e) => {
-                      setConfirmPassword(e.target.value);
+                      setConfirmPassword(e.target.value.trim());
                       handleChange(e);
                     }}
                     onBlur={handleBlur}

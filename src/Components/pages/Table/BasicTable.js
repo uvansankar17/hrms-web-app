@@ -45,7 +45,7 @@ const BasicTable = (props) => {
               <Form.Control
                 placeholder="Search here..."
                 value={state.globalFilter || ""}
-                onChange={(e) => setGlobalFilter(e.target.value)}
+                onChange={(e) => setGlobalFilter(e.target.value.trim())}
                 className=""
               />
             </Col>

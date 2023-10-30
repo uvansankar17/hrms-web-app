@@ -67,7 +67,7 @@ const Forgot = () => {
                       touched.email && errors.email ? "is-invalid" : ""
                     }`}
                     onChange={(e) => {
-                      setEmail(e.target.value);
+                      setEmail(e.target.value.trim());
                       handleChange(e);
                     }}
                     onBlur={handleBlur}

@@ -105,7 +105,7 @@ const PromotionAddForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setPromotionFor(e.target.value);
+                          setPromotionFor(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -158,7 +158,7 @@ const PromotionAddForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setPromotionFrom(e.target.value);
+                          setPromotionFrom(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}
@@ -189,7 +189,7 @@ const PromotionAddForm = () => {
                             : ""
                         }`}
                         onChange={(e) => {
-                          setPromotionTo(e.target.value);
+                          setPromotionTo(e.target.value.trim());
                           handleChange(e);
                         }}
                         onBlur={handleBlur}

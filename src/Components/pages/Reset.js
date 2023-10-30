@@ -72,7 +72,7 @@ const Reset = () => {
                         touched.password && errors.password ? "is-invalid" : ""
                       }`}
                       onChange={(e) => {
-                        setPassword(e.target.value);
+                        setPassword(e.target.value.trim());
                         handleChange(e);
                       }}
                       onBlur={handleBlur}
@@ -99,7 +99,7 @@ const Reset = () => {
                           : ""
                       }`}
                       onChange={(e) => {
-                        setRepeatPassword(e.target.value);
+                        setRepeatPassword(e.target.value.trim());
                         handleChange(e);
                       }}
                       onBlur={handleBlur}
