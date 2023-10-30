@@ -3,7 +3,7 @@ import React from 'react'
 const AttendanceAddForm = () => {
   return (
     <div>
-      
+      Bala
     </div>
   )
 }
