@@ -1,10 +1,10 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 const MultiSelect = (props) => {
-    const { label, name, id, type, placeholder,selectedValue,onChange, options, onBlur, className, lg, md, xxl, xl, sm , validation } = props;
+    const { label, name, id, type, placeholder,htmlFor,selectedValue,onChange, options, onBlur, className, lg, md, xxl, xl, sm , validation } = props;
     return (
             <Form.Group >
-                <Form.Label>{label}</Form.Label>
+                <Form.Label htmlFor={htmlFor}>{label}</Form.Label>
                 <Form.Select
                     name={name}
                     id={id}

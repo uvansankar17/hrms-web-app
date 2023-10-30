@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Formik } from "formik";
 import { LogAndRegSchema } from "./Forms/Validations/LoginValidation";
+import TextInput from "../TextInput";
 
 const Login = ({ setAuthenticated }) => {
   const [passwordIcon, setPasswordIcon] = useState(false);
@@ -69,9 +70,9 @@ const Login = ({ setAuthenticated }) => {
               isSubmitting,
             }) => (
               <Form className="d-flex flex-column justify-content-center">
-                <Form.Group>
-                  <Form.Label htmlFor="email">Email*</Form.Label>
-                  <Form.Control
+                <TextInput
+                   htmlFor="email"
+                   label={'Email*'}
                     name="email"
                     type="email"
                     size="md"
@@ -84,18 +85,17 @@ const Login = ({ setAuthenticated }) => {
                       handleChange(e);
                     }}
                     onBlur={handleBlur}
-                  ></Form.Control>
-                  {touched.email && errors.email ? (
+                  
+                  validation={touched.email && errors.email ? (
                     <p className="text-danger">{errors.email}</p>
                   ) : (
                     ""
                   )}
-                </Form.Group>
-                <Form.Group>
+                    />
                   <Row className="d-flex flex-row justify align-items-center">
                     <Col className="d-flex flex-row justify-end align-items-center">
                       <Form.Label
-                        htmlFor="password"
+                        htmlFor="password*"
                         className="d-flex flex-row justify-start"
                       >
                         password*
@@ -137,7 +137,7 @@ const Login = ({ setAuthenticated }) => {
                   ) : (
                     ""
                   )}
-                </Form.Group>
+                
 
                 <Button
                   className="mt-3 text-dark btn btn-outline-dark border-none outline-none"

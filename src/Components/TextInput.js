@@ -1,11 +1,11 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 const TextInput = (props) => {
-  const { label,name,id, type, placeholder, value, onChange,onBlur,
+  const { label,name,id, type, placeholder,htmlFor,lableClassName, value, onChange,onBlur,
     disabled, className,lg,md,xxl,xl,sm,validation} = props;
   return (
     <Form.Group >
-      <Form.Label>{label}</Form.Label>
+      <Form.Label htmlFor={htmlFor} className={lableClassName}>{label}</Form.Label>
       <Form.Control
         name={name}
         id={id}
