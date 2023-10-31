@@ -1,34 +1,13 @@
 import React, { useState } from "react";
 import MainLogo from "../Images/logo.jpeg";
 import "../pages/Css/MainNav.css";
-import {
-  Accordion,
-  Col,
-  Container,
-  Dropdown,
-  Offcanvas,
-  Row,
-} from "react-bootstrap";
+import { Col, Container, Dropdown, Offcanvas, Row } from "react-bootstrap";
 
-import { AiOutlineMenu, AiOutlineProject } from "react-icons/ai";
-import { BsThreeDotsVertical, BsTicketPerforated } from "react-icons/bs";
-import { PiStudentDuotone } from "react-icons/pi";
+import { AiOutlineMenu } from "react-icons/ai";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
-import { Link, useNavigate } from "react-router-dom";
-import {
-  BiNotepad,
-  BiSolidPieChartAlt2,
-  BiSolidUser,
-  BiSolidUserDetail,
-} from "react-icons/bi";
-import { SiGooglesheets } from "react-icons/si";
-import { SlCalender } from "react-icons/sl";
-import { MdOutlineAdminPanelSettings } from "react-icons/md";
-import { GiShakingHands } from "react-icons/gi";
-import { IoSettingsOutline } from "react-icons/io5";
-import { TbSpeakerphone } from "react-icons/tb";
-import { FaUsersGear } from "react-icons/fa6";
-import { LiaMoneyCheckAltSolid } from "react-icons/lia";
+import { useNavigate } from "react-router-dom";
+
 import { sidebarItems } from "./Table/SIDEMENU_DATA";
 import ReactSidebar from "./ReactSidebar";
 
@@ -56,7 +35,11 @@ const MainNav = ({ authenticated, setAuthenticated }) => {
       >
         <Row className="d-flex flex-row flex-wrap-wrap justify-content-around align-items-center p-2">
           <Col className="d-lg-none d-xl-none d-sm-flex">
-            <AiOutlineMenu size={25} onClick={handleNavigateAddForm} className="pointer" />
+            <AiOutlineMenu
+              size={25}
+              onClick={handleNavigateAddForm}
+              className="pointer"
+            />
           </Col>
           <Col
             className='d-lg-flex d-none d-sm-none  flex-row flex-wrap-wrap justify-content-between"align-items-center '
@@ -164,7 +147,7 @@ const MainNav = ({ authenticated, setAuthenticated }) => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body style={{ backgroundColor: "#313947" }}>
-          <ReactSidebar onClick={handleClose} sidebarItems={sidebarItems}/>
+            <ReactSidebar onClick={handleClose} sidebarItems={sidebarItems} />
           </Offcanvas.Body>
         </Offcanvas>
       </Row>
