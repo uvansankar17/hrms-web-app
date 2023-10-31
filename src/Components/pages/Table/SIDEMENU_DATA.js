@@ -1,15 +1,17 @@
 import { FaUsersGear} from 'react-icons/fa6';
-import { BiNotepad, BiSolidPieChartAlt2, BiSolidUser, BiSolidUserDetail } from 'react-icons/bi';
+import { BiCalendarEdit, BiNotepad, BiSolidPieChartAlt2, BiSolidUser, BiSolidUserDetail } from 'react-icons/bi';
 import { SiGooglesheets } from 'react-icons/si';
 import { MdOutlineAdminPanelSettings } from 'react-icons/md';
 import { AiOutlineProject } from 'react-icons/ai';
 import { GiShakingHands } from 'react-icons/gi';
 import { IoSettingsOutline} from 'react-icons/io5';
-import { TbSpeakerphone } from 'react-icons/tb';
+import { TbReportAnalytics, TbSpeakerphone } from 'react-icons/tb';
 import { PiStudentDuotone } from 'react-icons/pi';
-import { BsTicketPerforated } from 'react-icons/bs';
+import { BsBuildingGear, BsTicketPerforated } from 'react-icons/bs';
 import { LiaMoneyCheckAltSolid } from 'react-icons/lia';
 import { SlCalender} from 'react-icons/sl';
+import { RiChatSettingsLine, RiFileUserLine} from 'react-icons/ri';
+import { VscSettings} from 'react-icons/vsc';
 
 export const sidebarItems = [
     {
@@ -87,7 +89,7 @@ export const sidebarItems = [
           "id": 11,
           "label": "User (Report)",
           "parent_id": 10,
-          "icon": "",
+          "icon": <RiFileUserLine size={20}/>,
           "order_index":1,
           "url": "/userReport"
         },
@@ -95,7 +97,7 @@ export const sidebarItems = [
           "id": 12,
           "label": "Attendance (Report)",
           "parent_id": 10,
-          "icon": "",
+          "icon":<TbReportAnalytics size={20}/>,
           "order_index": 2,
           "url": "/attendanceReport"
         }
@@ -104,7 +106,7 @@ export const sidebarItems = [
           "id": 13,
           "label": "Leave (Report)",
           "parent_id": 10,
-          "icon": "",
+          "icon":<BiCalendarEdit size={20}/>,
           "order_index": 3,
           "url": "/leaveReport"
         }
@@ -154,26 +156,26 @@ export const sidebarItems = [
           "id": 19,
           "label": "Company Settings",
           "parent_id": 18,
-          "icon": "",
+          "icon": <BsBuildingGear/>,
           "order_index":1,
-          "url": "/products/electronics"
+          "url": "/companySetting"
         },
         {
           "id": 20,
           "label": "Notification settings",
           "parent_id": 18,
-          "icon": "",
+          "icon":<RiChatSettingsLine/>,
           "order_index": 2,
-          "url": "/products/clothing"
+          "url": "/notificationSetting"
         }
         ,
         {
           "id": 21,
           "label": "Status",
           "parent_id": 18,
-          "icon": "",
+          "icon":<VscSettings/>,
           "order_index": 3,
-          "url": "/products/clothing"
+          "url": "status"
         }
       ]
     },
