@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card, Table, ProgressBar} from "react-bootstrap";
 import { GoProject } from "react-icons/go";
 import { AiOutlineUser, AiOutlineUsergroupAdd } from "react-icons/ai";
 import { BiTask } from "react-icons/bi";
@@ -15,6 +15,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar, Line } from "react-chartjs-2";
+import { Link } from "react-router-dom";
 
 ChartJS.register(
   CategoryScale,
@@ -142,20 +143,121 @@ const AdminDashboard = () => {
             </Row>
           </Col>
         </Row>
-        <Row className="d-flex flex-sm-column mt-6 flex-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-between flex-wrap flex-md-row align-items-center overflow-hidden">
-          <Col className="rounded">
+        <Row className="d-flex my-3 flex-sm-column mt-6 flex-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-between flex-wrap flex-md-row align-items-center overflow-hidden">
+          <Col className="rounded my-1">
+           
             <Bar
               options={optionsBar}
               data={dataBar}
               className="boxShadow rounded"
             />
+            
           </Col>
-          <Col className="rounded ">
+          <Col className="rounded my-1 ">
+           
             <Line
               options={optionsLine}
               data={dataLine}
               className="boxShadow rounded"
             />
+           
+          </Col>
+        </Row>
+        <Row className="my-sm-3 d-flex flex-sm-column flex-md-column flex-xxl-row flex-xl-row flex-lg-row flex-row">
+          <Col className="my-1">
+          <Card className="position-relative">
+      <Card.Header><Card.Title>Clients</Card.Title></Card.Header>
+      <Card.Body>
+      <Table className="w-100 h-100" responsive>
+          <thead>
+            <tr>
+              <th style={{backgroundColor:"transparent", color:"black"}}>Name</th>
+              <th style={{backgroundColor:"transparent", color:"black"}}>Email</th>
+              <th style={{backgroundColor:"transparent", color:"black"}}>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="text-center">
+              <td>John Joe</td>
+              <td>john@gmail.com</td>
+              <td>active</td>
+            </tr>
+            <tr className="text-center">
+              <td>John Joe</td>
+              <td>john@gmail.com</td>
+              <td>active</td>
+            </tr>
+            <tr className="text-center">
+              <td>John Joe</td>
+              <td>john@gmail.com</td>
+              <td>active</td>
+            </tr>
+            <tr className="text-center">
+              <td>John Joe</td>
+              <td>john@gmail.com</td>
+              <td>active</td>
+            </tr>
+            <tr className="text-center">
+              <td>John Joe</td>
+              <td>john@gmail.com</td>
+              <td>active</td>
+            </tr>
+            
+          </tbody>
+        </Table>
+      </Card.Body>
+      <Link className="textDecoration-none" to={"/client"}>
+      <Card.Footer className="text-muted text-center">View all Clients</Card.Footer>
+      </Link>
+    </Card>
+          </Col>
+          <Col className="my-1">
+          <Card className="position-relative">
+      <Card.Header><Card.Title>Recent Projects</Card.Title></Card.Header>
+      <Card.Body>
+        <Table responsive>
+          <thead>
+            <tr>
+              <th style={{backgroundColor:"transparent", color:"black"}}>Project Name</th>
+              <th style={{backgroundColor:"transparent", color:"black"}}>Progress</th>
+              <th style={{backgroundColor:"transparent", color:"black"}}>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="text-center">
+              <td>HRMS</td>
+              <td><ProgressBar  variant="mainColor" now={90} label={`${90}%`}/></td>
+              <td>High</td>
+            </tr>
+            <tr className="text-center">
+              <td>HRMS</td>
+              <td><ProgressBar variant="mainColor" now={30} label={`${30}%`}/></td>
+              <td>Low</td>
+            </tr>
+            <tr className="text-center">
+              <td>HRMS</td>
+              <td><ProgressBar variant="mainColor" now={90} label={`${90}%`} /></td>
+              <td>High</td>
+            </tr>
+            <tr className="text-center">
+              <td>HRMS</td>
+              <td><ProgressBar variant="mainColor" color="text-black"  now={50} label={`${50}%`} /></td>
+              <td>Medium</td>
+            </tr>
+            <tr className="text-center">
+              <td>HRMS</td>
+              <td><ProgressBar variant="mainColor" now={20} label={`${20}%`} /></td>
+              <td>Low</td>
+            </tr>
+            
+            
+          </tbody>
+        </Table>
+      </Card.Body>
+      <Link className="textDecoration-none" to={"/project"}>
+      <Card.Footer className="text-muted text-center">View all projects</Card.Footer>
+      </Link>
+    </Card>
           </Col>
         </Row>
       </Container>
