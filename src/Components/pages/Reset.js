@@ -105,7 +105,7 @@ const Reset = () => {
                       onBlur={handleBlur}
                     ></Form.Control>
                     {touched.confirmPassword && errors.confirmPassword ? (
-                      <p className="text-danger m-1">
+                      <p className="text-danger m-1 text-center text-wrap">
                         {errors.confirmPassword}
                       </p>
                     ) : (

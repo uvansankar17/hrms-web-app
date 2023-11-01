@@ -73,7 +73,7 @@ const Otp = () => {
                           onBlur={handleBlur("otp")}
                           name="otp"
                           className={`form-control ${
-                            touched.otp && errors.otp ? "is-invalid" : ""
+                            touched.otp && errors.otp ? "border-danger" : ""
                           } `}
                           
                         />

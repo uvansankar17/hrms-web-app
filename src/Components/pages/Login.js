@@ -30,6 +30,7 @@ const Login = ({ setAuthenticated }) => {
   };
 
   const handleLogin = () => {
+    
     // Simulate authentication by setting authenticated to true.
     setAuthenticated(true);
     console.log("Email : " + email);
@@ -59,6 +60,8 @@ const Login = ({ setAuthenticated }) => {
           <Formik
             initialValues={initialValues}
             validationSchema={LogAndRegSchema}
+            onSubmit={handleLogin}
+            
           >
             {({
               values,
@@ -68,6 +71,8 @@ const Login = ({ setAuthenticated }) => {
               handleBlur,
               handleSubmit,
               isSubmitting,
+
+             
             }) => (
               <Form className="d-flex flex-column justify-content-center">
                 <TextInput
@@ -111,7 +116,7 @@ const Login = ({ setAuthenticated }) => {
                         id="password"
                         className={`position-relative form-control ${
                           touched.password && errors.password
-                            ? "is-invalid"
+                            ? "border-danger"
                             : ""
                         }`}
                         onChange={(e) => {
@@ -133,7 +138,7 @@ const Login = ({ setAuthenticated }) => {
                     </Col>
                   </Row>
                   {touched.password && errors.password ? (
-                    <p className="text-danger">{errors.password}</p>
+                    <p className="text-danger text-center text-wrap">{errors.password}</p>
                   ) : (
                     ""
                   )}
@@ -144,10 +149,10 @@ const Login = ({ setAuthenticated }) => {
                   style={{
                     backgroundColor: "#00d4ff",
                   }}
-                  type="submit"
+                  type="button"
                   disabled={isSubmitting}
                   onClick={
-                    email !== "" && password !== "" ? handleLogin : handleSubmit
+                    email !== '' && password !== '' ? handleLogin : handleSubmit
                   }
                 >
                   Login
