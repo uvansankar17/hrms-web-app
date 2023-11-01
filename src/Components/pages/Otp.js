@@ -66,7 +66,7 @@ const Otp = () => {
                         handleChange("otp")(value);
                       }}
                       numInputs={4}
-                      renderSeparator={<span>-</span>}
+                      renderSeparator={<span>&nbsp;&nbsp;</span>}
                       renderInput={(props) => (
                         <Form.Control
                           {...props}
