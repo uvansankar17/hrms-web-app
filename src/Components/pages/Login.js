@@ -138,7 +138,7 @@ const Login = ({ setAuthenticated }) => {
                     </Col>
                   </Row>
                   {touched.password && errors.password ? (
-                    <p className="text-danger text-center text-wrap">{errors.password}</p>
+                    <p className="text-danger">{errors.password}</p>
                   ) : (
                     ""
                   )}
