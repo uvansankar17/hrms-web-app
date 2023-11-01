@@ -12,7 +12,7 @@ export const LogAndRegSchema = Yup.object().shape({
   .min(8, 'Password should be at least 8 characters')
   .matches(
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/,
-    'Password must at least one uppercase letter, one lowercase letter, one number, and one special character'),
+    'Password Contain must at least ([A-Z],[a-b],[@$!%*?&],[0-10])'),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref("password"), null], "Password Does n't Match")
     .required("Password confirmation is required"),
