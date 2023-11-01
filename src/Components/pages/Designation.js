@@ -1,11 +1,13 @@
 import { Button, Form } from "react-bootstrap";
 import React, { useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import {  Container, Row } from "react-bootstrap";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Modal } from "react-bootstrap";
 import Header from "../Header";
 import DeleteModel from "../DeleteModel";
+import BasicTable from "./Table/BasicTable";
+import DESIGNATION_DATA from './Table/DESIGNATION_DATA.json'
 
 const Designation = () => {
   const [addShow, setAddShow] = useState(false);
@@ -30,6 +32,37 @@ const Designation = () => {
   const deleteHandleShow = () => {
     setDeleteShow(true);
   };
+  const COLUMNS = [
+    {
+      Header: "#",
+      accessor: "id",
+    },
+    {
+      Header: "DESIGNATION",
+      accessor: "designation",
+    },
+    {
+      Header: "DEPARTMENT",
+      accessor: "department",
+    },
+   
+    {
+      Header: "ACTION",
+      accessor: "action",
+      Cell: () => (
+        <div className="d-flex align-items-center justify-content-center flex-row">
+          
+            <Button variant="warning" onClick={editHandleShow}>
+              <FaEdit />
+            </Button>
+         
+          <Button variant="danger" className="m-1" onClick={deleteHandleShow}>
+            <MdDelete />
+          </Button>
+        </div>
+      ),
+    },
+  ];
   return (
     <>
       <Container fluid className="overflowX-hidden">
@@ -41,292 +74,8 @@ const Designation = () => {
           />
         </Row>
 
-        <Row className="d-flex  flex-sm-column flex-lg-row flex-xxl-row justify-content-lg-between justify-content-xxl-center justify-content-xl-center flex-xl-row align-items-lg-center align-items-xxl-center align-items-xl-center m-sm-3 m-lg-6 m-xxl-6 m-xl-6 md-2">
-          <Col
-            className="d-flex flex-row"
-            lg="5"
-            xxl="5"
-            xl="5"
-            md="12"
-            sm="12"
-            style={{
-              margin: "2px",
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Col className="d-flex justify-content-start flex-column">
-              <h4 className="fs-sm-5">Jeo Johnson</h4>
-              <p className="text-secondary">(Web Developer)</p>
-              <p className="text-success fs-6 fw-bolder">Active</p>
-            </Col>
-            <Col className="d-flex justify-content-end flex-row align-items-center">
-              <Button
-                variant="success"
-                className="m-1 fs-6"
-                onClick={editHandleShow}
-              >
-                <FaEdit />
-              </Button>
-              <Button
-                variant="danger"
-                className="m-1"
-                onClick={deleteHandleShow}
-              >
-                <MdDelete />
-              </Button>
-            </Col>
-          </Col>
-
-          <Col
-            className="d-flex flex-row"
-            lg="5"
-            xxl="5"
-            xl="5"
-            md="12"
-            sm="12"
-            style={{
-              margin: "2px",
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Col className="d-flex justify-content-start flex-column">
-              <h4 className="fs-sm-5">Jeo Johnson</h4>
-              <p className="text-secondary">(Web Developer)</p>
-              <p className="text-danger fs-6 fw-bolder">In Active</p>
-            </Col>
-            <Col className="d-flex justify-content-end flex-row align-items-center">
-              <Button
-                variant="success"
-                className="m-1 fs-6"
-                onClick={editHandleShow}
-              >
-                <FaEdit />
-              </Button>
-              <Button
-                variant="danger"
-                className="m-1"
-                onClick={deleteHandleShow}
-              >
-                <MdDelete />
-              </Button>
-            </Col>
-          </Col>
-
-          <Col
-            className="d-flex flex-row"
-            lg="5"
-            xxl="5"
-            xl="5"
-            md="12"
-            sm="12"
-            style={{
-              margin: "2px",
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Col className="d-flex justify-content-start flex-column">
-              <h4 className="fs-sm-5">Jeo Johnson</h4>
-              <p className="text-secondary">(Web Developer)</p>
-              <p className="text-danger fs-6 fw-bolder">In Active</p>
-            </Col>
-            <Col className="d-flex justify-content-end flex-row align-items-center">
-              <Button
-                variant="success"
-                className="m-1 fs-6"
-                onClick={editHandleShow}
-              >
-                <FaEdit />
-              </Button>
-              <Button
-                variant="danger"
-                className="m-1"
-                onClick={deleteHandleShow}
-              >
-                <MdDelete />
-              </Button>
-            </Col>
-          </Col>
-
-          <Col
-            className="d-flex flex-row"
-            lg="5"
-            xxl="5"
-            xl="5"
-            md="12"
-            sm="12"
-            style={{
-              margin: "2px",
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Col className="d-flex justify-content-start flex-column">
-              <h4 className="fs-sm-5">Jeo Johnson</h4>
-              <p className="text-secondary">(Web Developer)</p>
-              <p className="text-danger fs-6 fw-bolder">In Active</p>
-            </Col>
-            <Col className="d-flex justify-content-end flex-row align-items-center">
-              <Button
-                variant="success"
-                className="m-1 fs-6"
-                onClick={editHandleShow}
-              >
-                <FaEdit />
-              </Button>
-              <Button
-                variant="danger"
-                className="m-1"
-                onClick={deleteHandleShow}
-              >
-                <MdDelete />
-              </Button>
-            </Col>
-          </Col>
-
-          <Col
-            className="d-flex flex-row"
-            lg="5"
-            xxl="5"
-            xl="5"
-            md="12"
-            sm="12"
-            style={{
-              margin: "2px",
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Col className="d-flex justify-content-start flex-column">
-              <h4 className="fs-sm-5">Jeo Johnson</h4>
-              <p className="text-secondary">(Web Developer)</p>
-              <p className="text-success fs-6 fw-bolder">Active</p>
-            </Col>
-            <Col className="d-flex justify-content-end flex-row align-items-center">
-              <Button
-                variant="success"
-                className="m-1 fs-6"
-                onClick={editHandleShow}
-              >
-                <FaEdit />
-              </Button>
-              <Button
-                variant="danger"
-                className="m-1"
-                onClick={deleteHandleShow}
-              >
-                <MdDelete />
-              </Button>
-            </Col>
-          </Col>
-          <Col
-            className="d-flex flex-row"
-            lg="5"
-            xxl="5"
-            xl="5"
-            md="12"
-            sm="12"
-            style={{
-              margin: "2px",
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Col className="d-flex justify-content-start flex-column">
-              <h4 className="fs-sm-5">Jeo Johnson</h4>
-              <p className="text-secondary">(Web Developer)</p>
-              <p className="text-success fs-6 fw-bolder">Active</p>
-            </Col>
-            <Col className="d-flex justify-content-end flex-row align-items-center">
-              <Button
-                variant="success"
-                className="m-1 fs-6"
-                onClick={editHandleShow}
-              >
-                <FaEdit />
-              </Button>
-              <Button
-                variant="danger"
-                className="m-1"
-                onClick={deleteHandleShow}
-              >
-                <MdDelete />
-              </Button>
-            </Col>
-          </Col>
-          <Col
-            className="d-flex flex-row"
-            lg="5"
-            xxl="5"
-            xl="5"
-            md="12"
-            sm="12"
-            style={{
-              margin: "2px",
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Col className="d-flex justify-content-start flex-column">
-              <h4 className="fs-sm-5">Jeo Johnson</h4>
-              <p className="text-secondary">(Web Developer)</p>
-              <p className="text-success fs-6 fw-bolder">Active</p>
-            </Col>
-            <Col className="d-flex justify-content-end flex-row align-items-center">
-              <Button
-                variant="success"
-                className="m-1 fs-6"
-                onClick={editHandleShow}
-              >
-                <FaEdit />
-              </Button>
-              <Button
-                variant="danger"
-                className="m-1"
-                onClick={deleteHandleShow}
-              >
-                <MdDelete />
-              </Button>
-            </Col>
-          </Col>
-
-          <Col
-            className="d-flex flex-row"
-            lg="5"
-            xxl="5"
-            xl="5"
-            md="12"
-            sm="12"
-            style={{
-              margin: "2px",
-              boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-            }}
-          >
-            <Col className="d-flex justify-content-start flex-column">
-              <h4 className="fs-sm-5">Jeo Johnson</h4>
-              <p className="text-secondary">(Web Developer)</p>
-              <p className="text-danger fs-6 fw-bolder">In Active</p>
-            </Col>
-            <Col className="d-flex justify-content-end flex-row align-items-center">
-              <Button
-                variant="success"
-                className="m-1 fs-6"
-                onClick={editHandleShow}
-              >
-                <FaEdit />
-              </Button>
-              <Button
-                variant="danger"
-                className="m-1"
-                onClick={deleteHandleShow}
-              >
-                <MdDelete />
-              </Button>
-            </Col>
-          </Col>
+        <Row >
+        <BasicTable COLUMNS={COLUMNS} MOCK_DATA={DESIGNATION_DATA} />
         </Row>
       </Container>
 
@@ -335,24 +84,20 @@ const Designation = () => {
       {/* AddModel */}
 
       <Modal show={addShow} onHide={addHandleClose} centered>
-        <Modal.Header closeButton>
+        <Modal.Header  closeButton>
           <Modal.Title>Add Designation</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group>
-              <Form.Label>Name</Form.Label>
+          <Form.Group>
+              <Form.Label>Designation Name*</Form.Label>
               <Form.Control></Form.Control>
             </Form.Group>
             <Form.Group>
-              <Form.Label>Designation</Form.Label>
-              <Form.Control></Form.Control>
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Stutus</Form.Label>
+              <Form.Label>Department*</Form.Label>
               <Form.Select>
-                <option>Active</option>
-                <option>In Active</option>
+                <option>FrontEnd Developer</option>
+                <option>BackEndDeveloper</option>
               </Form.Select>
             </Form.Group>
           </Form>
@@ -370,24 +115,20 @@ const Designation = () => {
       {/* Update Model */}
 
       <Modal show={editShow} onHide={editHandleClose} centered>
-        <Modal.Header closeButton>
+        <Modal.Header  closeButton>
           <Modal.Title>Edit Designation</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group>
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Designation Name*</Form.Label>
               <Form.Control></Form.Control>
             </Form.Group>
             <Form.Group>
-              <Form.Label>Designation</Form.Label>
-              <Form.Control></Form.Control>
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Stutus</Form.Label>
+              <Form.Label>Department*</Form.Label>
               <Form.Select>
-                <option>Active</option>
-                <option>In Active</option>
+                <option>FrontEnd Developer</option>
+                <option>BackEndDeveloper</option>
               </Form.Select>
             </Form.Group>
           </Form>
