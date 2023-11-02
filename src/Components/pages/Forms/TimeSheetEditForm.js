@@ -94,15 +94,15 @@ const TimeSheetAddForm = () => {
                     type="button"
                     disabled={isSubmitting}
                     onClick={
-                      projectName !== "" &&
-                      deadLine !== "" &&
-                      date !== "" &&
-                      description !== "" &&
-                      totalHours !== "" &&
-                      remainingHours !== "" &&
-                      hours !== ""
-                        ? handleAddData
-                        : handleSubmit
+                      (touched.projectName && errors.projectName) ||
+                      (touched.deadLine && errors.deadLine) ||
+                      (touched.date && errors.date) || 
+                      (touched.description && errors.description) ||
+                      (touched.totalHours && errors.totalHours) ||
+                      (touched.remainingHours && errors.remainingHours) ||
+                      (touched.hours && errors.hours) 
+                          ? handleSubmit
+                          : handleAddData
                     }
                   >
                     Update
@@ -310,15 +310,15 @@ const TimeSheetAddForm = () => {
                     type="button"
                     disabled={isSubmitting}
                     onClick={
-                      projectName !== "" &&
-                      deadLine !== "" &&
-                      date !== "" &&
-                      description !== "" &&
-                      totalHours !== "" &&
-                      remainingHours !== "" &&
-                      hours !== ""
-                        ? handleAddData
-                        : handleSubmit
+                      (touched.projectName && errors.projectName) ||
+                      (touched.deadLine && errors.deadLine) ||
+                      (touched.date && errors.date) || 
+                      (touched.description && errors.description) ||
+                      (touched.totalHours && errors.totalHours) ||
+                      (touched.remainingHours && errors.remainingHours) ||
+                      (touched.hours && errors.hours) 
+                          ? handleSubmit
+                          : handleAddData
                     }
                   >
                     Update

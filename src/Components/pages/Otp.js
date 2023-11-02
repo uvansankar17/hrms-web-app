@@ -91,7 +91,7 @@ const Otp = () => {
                     }}
                     type="button"
                     disabled={isSubmitting}
-                    onClick={otp !== "" ? handleOtpChange : handleSubmit}
+                    onClick={(touched.otp && errors.otp) ? handleSubmit :  handleOtpChange}
                   >
                     submit
                   </Button>

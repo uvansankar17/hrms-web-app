@@ -46,6 +46,7 @@ const Register = () => {
           <Formik
             initialValues={initialValues}
             validationSchema={LogAndRegSchema}
+            onSubmit={handleRegister}
           >
             {({
               values,
@@ -133,12 +134,10 @@ const Register = () => {
                   style={{
                     backgroundColor: "#00d4ff",
                   }}
-                  type="submit"
+                  type="button"
                   disabled={isSubmitting}
                   onClick={
-                    email !== "" && password !== "" && confirmPassword !== ""
-                      ? handleRegister
-                      : handleSubmit
+                    (touched.email && errors.email) || (touched.password && errors.password) || (touched.confirmPassword && errors.confirmPassword) ? handleSubmit :  handleRegister
                   }
                 >
                   Register

@@ -9,7 +9,6 @@ const ReactSidebar = ({ sidebarItems , onClick}) => {
   const renderMenuItems = (items) => {
     return items.map((item) => {
         const isActive = location.pathname === item.url;
-        console.log('Item:', item.label, 'isActive:', isActive);
       if (item.children && item.children.length > 0) {
         return (
           <SubMenu  className='fs-15 text-bolder' active={isActive} rootStyles={{

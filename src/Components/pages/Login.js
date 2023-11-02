@@ -152,7 +152,7 @@ const Login = ({ setAuthenticated }) => {
                   type="button"
                   disabled={isSubmitting}
                   onClick={
-                    email !== '' && password !== '' ? handleLogin : handleSubmit
+                    (touched.email && errors.email) || (touched.password && errors.password) ? handleSubmit :  handleLogin
                   }
                 >
                   Login

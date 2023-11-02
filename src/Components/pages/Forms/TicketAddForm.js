@@ -106,18 +106,18 @@ const TicketAddForm = () => {
                     type="button"
                     disabled={isSubmitting}
                     onClick={
-                      project !== "" &&
-                      ticketId !== "" &&
-                      assignTo !== "" &&
-                      ticketFollower !== "" &&
-                      priority !== "" &&
-                      status !== "" &&
-                      client !== "" &&
-                      createDate !== "" &&
-                      attachment !== "" &&
-                      description !== ""
-                        ? handleAddData
-                        : handleSubmit
+                      (touched.priority && errors.project) ||
+                      (touched.ticketId && errors.ticketId) ||
+                      (touched.assignTo && errors.assignTo) ||
+                      (touched.ticketFollower && errors.ticketFollower) || 
+                      (touched.priority && errors.priority) ||
+                      (touched.status && errors.status) ||
+                      (touched.client && errors.client) ||
+                      (touched.createDate && errors.createDate) ||
+                      (touched.attachment && errors.attachment) ||
+                      (touched.description && errors.description) 
+                          ? handleSubmit
+                          : handleAddData
                     }
                   >
                     Save
@@ -437,18 +437,18 @@ const TicketAddForm = () => {
                     type="button"
                     disabled={isSubmitting}
                     onClick={
-                      project !== "" &&
-                      ticketId !== "" &&
-                      assignTo !== "" &&
-                      ticketFollower !== "" &&
-                      priority !== "" &&
-                      status !== "" &&
-                      client !== "" &&
-                      createDate !== "" &&
-                      attachment !== "" &&
-                      description !== ""
-                        ? handleAddData
-                        : handleSubmit
+                      (touched.priority && errors.project) ||
+                      (touched.ticketId && errors.ticketId) ||
+                      (touched.assignTo && errors.assignTo) ||
+                      (touched.ticketFollower && errors.ticketFollower) || 
+                      (touched.priority && errors.priority) ||
+                      (touched.status && errors.status) ||
+                      (touched.client && errors.client) ||
+                      (touched.createDate && errors.createDate) ||
+                      (touched.attachment && errors.attachment) ||
+                      (touched.description && errors.description) 
+                          ? handleSubmit
+                          : handleAddData
                     }
                   >
                     Save

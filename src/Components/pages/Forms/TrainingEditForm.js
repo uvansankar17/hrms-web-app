@@ -98,16 +98,16 @@ const TrainingEditForm = () => {
                     type="button"
                     disabled={isSubmitting}
                     onClick={
-                      trainingType !== "" &&
-                      trainer !== "" &&
-                      employee !== "" &&
-                      description !== "" &&
-                      trainingCost !== "" &&
-                      startDate !== "" &&
-                      endDate !== "" &&
-                      status !== ""
-                        ? handleAddData
-                        : handleSubmit
+                      (touched.trainingType && errors.trainingType) ||
+                      (touched.trainer && errors.trainer) ||
+                      (touched.employee && errors.employee) ||
+                      (touched.description && errors.description) ||
+                      (touched.trainingCost && errors.trainingCost) ||
+                      (touched.startDate && errors.startDate) ||
+                      (touched.endDate && errors.endDate) ||
+                      (touched.status && errors.status)  
+                          ? handleSubmit
+                          : handleAddData
                     }
                   >
                     Update
@@ -357,16 +357,16 @@ const TrainingEditForm = () => {
                     type="button"
                     disabled={isSubmitting}
                     onClick={
-                      trainingType !== "" &&
-                      trainer !== "" &&
-                      employee !== "" &&
-                      description !== "" &&
-                      trainingCost !== "" &&
-                      startDate !== "" &&
-                      endDate !== "" &&
-                      status !== ""
-                        ? handleAddData
-                        : handleSubmit
+                      (touched.trainingType && errors.trainingType) ||
+                      (touched.trainer && errors.trainer) ||
+                      (touched.employee && errors.employee) ||
+                      (touched.description && errors.description) ||
+                      (touched.trainingCost && errors.trainingCost) ||
+                      (touched.startDate && errors.startDate) ||
+                      (touched.endDate && errors.endDate) ||
+                      (touched.status && errors.status)  
+                          ? handleSubmit
+                          : handleAddData
                     }
                   >
                     Update

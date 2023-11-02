@@ -114,18 +114,18 @@ const ProjectAddForm = () => {
                       type="submit"
                       disabled={isSubmitting}
                       onClick={
-                        projectName !== "" &&
-                        client !== "" &&
-                        startDate !== "" &&
-                        endDate !== "" &&
-                        rate !== "" &&
-                        priority !== "" &&
-                        teamLeader !== "" &&
-                        teamMember !== "" &&
-                        description !== "" &&
-                        projectFile !== null
-                          ? handleAddData
-                          : handleSubmit
+                        (touched.projectName && errors.projectName) || 
+                        (touched.client && errors.client) ||
+                        (touched.startDate && errors.startDate) ||
+                        (touched.endDate && errors.endDate) ||
+                        (touched.rate && errors.rate) ||
+                        (touched.priority && errors.priority) ||
+                        (touched.teamLeader && errors.teamLeader) ||
+                        (touched.teamMember && errors.teamMember) ||
+                        (touched.description && errors.description) ||
+                        (touched.projectFile && errors.projectFile) 
+                          ? handleSubmit
+                          : handleAddData
                       }
                     >
                       Save
@@ -414,18 +414,18 @@ const ProjectAddForm = () => {
                       type="button"
                       disabled={isSubmitting}
                       onClick={
-                        projectName !== "" &&
-                        client !== "" &&
-                        startDate !== "" &&
-                        endDate !== "" &&
-                        rate !== "" &&
-                        priority !== "" &&
-                        teamLeader !== "" &&
-                        teamMember !== "" &&
-                        description !== "" &&
-                        projectFile !== null
-                          ? handleAddData
-                          : handleSubmit
+                        (touched.projectName && errors.projectName) || 
+                        (touched.client && errors.client) ||
+                        (touched.startDate && errors.startDate) ||
+                        (touched.endDate && errors.endDate) ||
+                        (touched.rate && errors.rate) ||
+                        (touched.priority && errors.priority) ||
+                        (touched.teamLeader && errors.teamLeader) ||
+                        (touched.teamMember && errors.teamMember) ||
+                        (touched.description && errors.description) ||
+                        (touched.projectFile && errors.projectFile) 
+                          ? handleSubmit
+                          : handleAddData
                       }
                     >
                       Save

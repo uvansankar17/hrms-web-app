@@ -116,20 +116,20 @@ const EmployeeEditForm = () => {
                       type="button"
                       disabled={isSubmitting}
                       onClick={
-                        firstName !== "" &&
-                        lastName !== "" &&
-                        userName !== "" &&
-                        email !== "" &&
-                        password !== "" &&
-                        confirmPassword !== "" &&
-                        employeeId !== "" &&
-                        joiningDate !== "" &&
-                        mobile !== "" &&
-                        company !== "" &&
-                        department !== "" &&
-                        designation !== ""
-                          ? handleAddData
-                          : handleSubmit
+                        (touched.firstName && errors.firstName) ||
+                        (touched.lastName && errors.lastName) ||
+                        (touched.userName && errors.userName) ||
+                        (touched.email && errors.email) ||
+                        (touched.password && errors.password) ||
+                        (touched.confirmPassword && errors.confirmPassword) ||
+                        (touched.employeeId && errors.employeeId) ||
+                        (touched.joiningDate && errors.joiningDate) ||
+                        (touched.mobile && errors.mobile) ||
+                        (touched.company && errors.company) ||
+                        (touched.department && errors.department) ||
+                        (touched.designation && errors.designation) 
+                          ? handleSubmit
+                          : handleAddData
                       }
                     >
                       Update
@@ -475,20 +475,20 @@ const EmployeeEditForm = () => {
                       type="button"
                       disabled={isSubmitting}
                       onClick={
-                        firstName !== "" &&
-                        lastName !== "" &&
-                        userName !== "" &&
-                        email !== "" &&
-                        password !== "" &&
-                        confirmPassword !== "" &&
-                        employeeId !== "" &&
-                        joiningDate !== "" &&
-                        mobile !== "" &&
-                        company !== "" &&
-                        department !== "" &&
-                        designation !== ""
-                          ? handleAddData
-                          : handleSubmit
+                        (touched.firstName && errors.firstName) ||
+                        (touched.lastName && errors.lastName) ||
+                        (touched.userName && errors.userName) ||
+                        (touched.email && errors.email) ||
+                        (touched.password && errors.password) ||
+                        (touched.confirmPassword && errors.confirmPassword) ||
+                        (touched.employeeId && errors.employeeId) ||
+                        (touched.joiningDate && errors.joiningDate) ||
+                        (touched.mobile && errors.mobile) ||
+                        (touched.company && errors.company) ||
+                        (touched.department && errors.department) ||
+                        (touched.designation && errors.designation) 
+                          ? handleSubmit
+                          : handleAddData
                       }
                     >
                       Update

@@ -77,12 +77,12 @@ const PromotionAddForm = () => {
                     type="button"
                     disabled={isSubmitting}
                     onClick={
-                      promotionFor !== "" &&
-                      promotionFrom !== "" &&
-                      promotionTo !== "" &&
-                      promotionDate !== ""
-                        ? handleAddData
-                        : handleSubmit
+                      (touched.promotionFor && errors.promotionFor) || 
+                      (touched.promotionFrom && errors.promotionFrom) ||
+                      (touched.promotionTo && errors.promotionTo) ||
+                      (touched.promotionDate && errors.promotionDate) 
+                          ? handleSubmit
+                          : handleAddData
                     }
                   >
                     Save
@@ -227,12 +227,12 @@ const PromotionAddForm = () => {
                     type="button"
                     disabled={isSubmitting}
                     onClick={
-                      promotionFor !== "" &&
-                      promotionFrom !== "" &&
-                      promotionTo !== "" &&
-                      promotionDate !== ""
-                        ? handleAddData
-                        : handleSubmit
+                      (touched.promotionFor && errors.promotionFor) || 
+                      (touched.promotionFrom && errors.promotionFrom) ||
+                      (touched.promotionTo && errors.promotionTo) ||
+                      (touched.promotionDate && errors.promotionDate) 
+                          ? handleSubmit
+                          : handleAddData
                     }
                   >
                     Save

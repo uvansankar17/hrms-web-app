@@ -45,6 +45,7 @@ const Forgot = () => {
           <Formik
             initialValues={initialValues}
             validationSchema={LogAndRegSchema}
+            onSubmit={handleForgot}
           >
             {({
               values,
@@ -84,9 +85,9 @@ const Forgot = () => {
                   style={{
                     backgroundColor: "#00d4ff",
                   }}
-                  type="submit"
+                  type="button"
                   disabled={isSubmitting}
-                  onClick={email !== "" ? handleForgot : handleSubmit}
+                  onClick={(touched.email && errors.email) ? handleSubmit :  handleForgot}
                 >
                   Forgot Password
                 </Button>

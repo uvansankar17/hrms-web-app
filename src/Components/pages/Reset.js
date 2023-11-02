@@ -121,9 +121,7 @@ const Reset = () => {
                     type="submit"
                     disabled={isSubmitting}
                     onClick={
-                      password !== "" && repeatPassword !== ""
-                        ? handleReset
-                        : handleSubmit
+                     (touched.password && errors.password) || (touched.confirmPassword && errors.confirmPassword) ? handleSubmit :  handleReset
                     }
                   >
                     Reset Password
